@@ -30,6 +30,7 @@ class ErrorCode(StrEnum):
     ACCOUNT_INVALID     = "account_invalid"     # notion_account.json missing fields
     WORKSPACE_AMBIGUOUS = "workspace_ambiguous" # caller must disambiguate
     WORKSPACE_EMPTY     = "workspace_empty"     # /loadUserContent returned no spaces
+    AI_FEATURE_DISABLED = "ai_feature_disabled" # workspace has AI features disabled
     THREAD_STATE_MISSING   = "thread_state_missing"   # --thread-id but no saved file
     THREAD_STATE_MALFORMED = "thread_state_malformed" # saved state JSON unparseable
 

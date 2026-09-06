@@ -150,7 +150,7 @@ class NDJSONStreamParser:
         if event_type == "patch":
             self._handle_patch(event)
             return
-        if event_type == "patch-start":
+        if event_type in ("patch-start", "patch-sync"):
             self._handle_patch_start(event)
             return
         if event_type == "agent-inference":
@@ -186,6 +186,8 @@ class NDJSONStreamParser:
             for i, entry in enumerate(s):
                 _raise_if_error_entry(entry)
                 self._value_counts.setdefault(f"/s/{i}", 0)
+                if isinstance(entry, dict):
+                    self._absorb_inline_section(i, entry)
 
     def _handle_patch(self, event: dict[str, Any]) -> None:
         ops = event.get("v")

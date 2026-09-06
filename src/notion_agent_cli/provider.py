@@ -105,6 +105,17 @@ def _sec_ch_ua(user_agent: str) -> str:
         f'"Not/A)Brand";v="99"'
     )
 
+
+def _sec_ch_ua_platform(user_agent: str) -> str:
+    ua = user_agent or ""
+    if "Windows" in ua:
+        return '"Windows"'
+    if "Mac" in ua:
+        return '"macOS"'
+    if "Linux" in ua:
+        return '"Linux"'
+    return '"macOS"'
+
 # Notion stamps the current web build into the /ai app-shell HTML in two
 # spots — the root element's ``data-notion-version`` attribute and a JS
 # config object's ``version:"..."``. Either is the value the chat panel
@@ -165,7 +176,7 @@ def build_headers(
         "x-notion-space-id":           acc.space_id,
         "sec-ch-ua":          _sec_ch_ua(acc.user_agent),
         "sec-ch-ua-mobile":   "?0",
-        "sec-ch-ua-platform": '"macOS"',
+        "sec-ch-ua-platform": _sec_ch_ua_platform(acc.user_agent),
         "sec-fetch-dest":     "empty",
         "sec-fetch-mode":     "cors",
         "sec-fetch-site":     "same-origin",
@@ -268,7 +279,7 @@ async def fetch_session_warmup(
         "user-agent":         ua,
         "sec-ch-ua":          _sec_ch_ua(ua),
         "sec-ch-ua-mobile":   "?0",
-        "sec-ch-ua-platform": '"macOS"',
+        "sec-ch-ua-platform": _sec_ch_ua_platform(ua),
         "sec-fetch-dest":     "document",
         "sec-fetch-mode":     "navigate",
         "sec-fetch-site":     "none",

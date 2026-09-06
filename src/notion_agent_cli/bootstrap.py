@@ -40,6 +40,7 @@ class Workspace:
     space_view_id: str
     space_name: str
     domain: str
+    ai_enabled: bool = True
 
 
 @dataclass(slots=True, frozen=True)
@@ -136,6 +137,23 @@ def _walk_record(record: dict[str, Any]) -> dict[str, Any]:
     return record
 
 
+def _is_space_ai_enabled(space_dict: dict[str, Any]) -> bool:
+    """Check whether Notion AI is enabled for a workspace record."""
+    settings = space_dict.get("settings")
+    if isinstance(settings, dict):
+        if settings.get("disable_ai_feature") is True:
+            return False
+        if settings.get("notion_admin_disabled_ai_feature") is True:
+            return False
+        if settings.get("enable_ai_feature") is False:
+            return False
+    if space_dict.get("disable_ai_feature") is True:
+        return False
+    if space_dict.get("enable_ai_feature") is False:
+        return False
+    return True
+
+
 def _extract_workspaces(load_data: dict[str, Any]) -> list[Workspace]:
     rm = load_data.get("recordMap") or {}
     spaces_raw = rm.get("space") or {}
@@ -151,11 +169,13 @@ def _extract_workspaces(load_data: dict[str, Any]) -> list[Workspace]:
     out: list[Workspace] = []
     for space_id, space_rec in spaces_raw.items():
         sp = _walk_record(space_rec)
+        ai_enabled = _is_space_ai_enabled(sp)
         out.append(Workspace(
             space_id=space_id,
             space_view_id=sv_by_space.get(space_id, ""),
             space_name=sp.get("name") or "",
             domain=sp.get("domain") or "",
+            ai_enabled=ai_enabled,
         ))
     return out
 
@@ -228,6 +248,7 @@ async def bootstrap_account(
     token_v2: str,
     user_id: str | None = None,
     browser_id: str | None = None,
+    space_id: str | None = None,
     space_name: str | None = None,
     space_domain: str | None = None,
     agent_name: str = "",
@@ -241,7 +262,7 @@ async def bootstrap_account(
 
     Minimum input is ``token_v2``. ``user_id`` is auto-derived from the
     response when not supplied. Raises :class:`AmbiguousWorkspaceError`
-    when multiple workspaces are available and ``space_name`` /
+    when multiple workspaces are available and ``space_id`` / ``space_name`` /
     ``space_domain`` didn't disambiguate, and ``NotionAgentError`` with
     code ``AUTH_INVALID`` when /loadUserContent returns no user record
     (signature of an expired / rejected token_v2).
@@ -266,23 +287,42 @@ async def bootstrap_account(
             code=ErrorCode.WORKSPACE_EMPTY,
         )
 
-    if len(workspaces) == 1:
-        chosen = workspaces[0]
+    if space_id:
+        match = next((w for w in workspaces if w.space_id == space_id), None)
+        if match is None:
+            raise NotionAgentError(
+                f"Workspace id {space_id!r} not found in available workspaces: "
+                + ", ".join(f"{w.space_name!r} ({w.space_id})" for w in workspaces),
+                code=ErrorCode.WORKSPACE_EMPTY,
+            )
+        chosen = match
     elif space_domain:
-        match = next((w for w in workspaces if w.domain == space_domain), None)
-        if match is None:
+        matched = [w for w in workspaces if w.domain == space_domain]
+        if not matched:
             raise AmbiguousWorkspaceError(workspaces)
-        chosen = match
+        ai_matched = [w for w in matched if w.ai_enabled]
+        chosen = ai_matched[0] if ai_matched else matched[0]
     elif space_name:
-        match = next(
-            (w for w in workspaces if w.space_name.lower() == space_name.lower()),
-            None,
-        )
-        if match is None:
+        matched = [w for w in workspaces if w.space_name.lower() == space_name.lower()]
+        if not matched:
             raise AmbiguousWorkspaceError(workspaces)
-        chosen = match
+        ai_matched = [w for w in matched if w.ai_enabled]
+        chosen = ai_matched[0] if ai_matched else matched[0]
+    elif len(workspaces) == 1:
+        chosen = workspaces[0]
     else:
-        raise AmbiguousWorkspaceError(workspaces)
+        ai_workspaces = [w for w in workspaces if w.ai_enabled]
+        if len(ai_workspaces) == 1:
+            chosen = ai_workspaces[0]
+        else:
+            raise AmbiguousWorkspaceError(workspaces)
+
+    if not chosen.ai_enabled:
+        raise NotionAgentError(
+            f"Workspace {chosen.space_name!r} ({chosen.space_id}) has Notion AI features disabled "
+            f"in workspace settings. Please enable Notion AI or select an AI-enabled workspace.",
+            code=ErrorCode.AI_FEATURE_DISABLED,
+        )
 
     user = _extract_user(data, user_id)
 

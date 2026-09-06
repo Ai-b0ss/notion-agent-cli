@@ -142,23 +142,38 @@ def save_notion_account(acc: NotionAccount, path: Path | str) -> None:
     p.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def build_cookie_header(acc: NotionAccount) -> str:
-    """Cookie header value — prefers full_cookie when set, else stitches
-    together the minimum logged-in subset."""
-    if acc.full_cookie:
-        return acc.full_cookie
+def parse_browser_cookie(cookie_str: str) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for part in (cookie_str or "").split(";"):
+        part = part.strip()
+        if not part or "=" not in part:
+            continue
+        k, _, v = part.partition("=")
+        out[k.strip()] = v.strip()
+    return out
 
-    user_id = acc.user_id
-    user_id_nodash = user_id.replace("-", "")
-    parts = [
-        f"notion_browser_id={acc.browser_id}",
-        f"device_id={acc.device_id}",
-        f"notion_user_id={user_id}",
-        f'notion_users=[%22{user_id}%22]',
-        "notion_check_cookie_consent=false",
-        "notion_locale=en-US/legacy",
-        "notion_cookie_sync_completed=%7B%22completed%22%3Atrue%2C%22version%22%3A4%7D",
-        f"_cioid={user_id_nodash}",
-        f"token_v2={acc.token_v2}",
-    ]
-    return "; ".join(parts)
+
+def build_cookie_header(acc: NotionAccount) -> str:
+    """Build a complete active-session cookie header.
+
+    A partial browser cookie string (for example only token_v2 +
+    notion_user_id) must not be treated as complete. Notion supports
+    multiple signed-in identities, and inference entitlement routing needs
+    the active notion_user_id/notion_users/device context as well.
+    """
+    cookies = parse_browser_cookie(acc.full_cookie) if acc.full_cookie else {}
+
+    def ensure(name: str, value: str) -> None:
+        if value and not cookies.get(name):
+            cookies[name] = value
+
+    ensure("notion_browser_id", acc.browser_id)
+    ensure("device_id", acc.device_id)
+    ensure("notion_user_id", acc.user_id)
+    ensure("notion_users", f"[%22{acc.user_id}%22]")
+    ensure("notion_check_cookie_consent", "false")
+    ensure("notion_locale", "en-US/autodetect")
+    ensure("token_v2", acc.token_v2)
+
+    return "; ".join(f"{name}={value}" for name, value in cookies.items())
+

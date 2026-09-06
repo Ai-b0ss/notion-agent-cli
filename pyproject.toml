@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "notion-agent-cli"
-version = "0.1.12"
+version = "0.1.13"
 description = "CLI + Python client for Notion's internal AI chat panel"
 readme = "README.md"
 requires-python = ">=3.11"

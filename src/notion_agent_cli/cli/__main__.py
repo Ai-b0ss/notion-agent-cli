@@ -36,6 +36,8 @@ from notion_agent_cli.bootstrap import (
     bootstrap_account,
     fetch_user_content,
     parse_browser_cookie,
+    _walk_record,
+    _is_space_ai_enabled,
 )
 from notion_agent_cli.exceptions import (
     NotionAgentError,
@@ -102,6 +104,8 @@ def _add_init_parser(sub: argparse._SubParsersAction) -> None:
     p.add_argument("--browser-id", default=None,
                    help="notion_browser_id cookie value (random UUID if "
                         "neither --browser-id nor --cookie supplies it).")
+    p.add_argument("--space-id", default=None,
+                   help="Workspace UUID when you want to target an exact workspace.")
     p.add_argument("--space-name", default=None,
                    help="Workspace display name when you have multiple workspaces.")
     p.add_argument("--space-domain", default=None,
@@ -128,6 +132,7 @@ async def _run_init(args: argparse.Namespace) -> NotionAccount:
         token_v2=args.token_v2,
         user_id=args.user_id,
         browser_id=args.browser_id,
+        space_id=args.space_id,
         space_name=args.space_name,
         space_domain=args.space_domain,
         agent_name=args.agent_name,
@@ -781,7 +786,8 @@ def _cmd_doctor(args: argparse.Namespace) -> int:
     checks.append(("ok", "token_v2 accepted by /loadUserContent", ""))
 
     # 4) Bound space_id still in the response
-    rm_spaces = list((data.get("recordMap") or {}).get("space") or {})
+    rm_spaces_map = (data.get("recordMap") or {}).get("space") or {}
+    rm_spaces = list(rm_spaces_map)
     if acc.space_id in rm_spaces:
         checks.append(("ok", "bound space_id present in workspaces",
                        f"{len(rm_spaces)} workspaces total"))
@@ -790,6 +796,15 @@ def _cmd_doctor(args: argparse.Namespace) -> int:
                        f"bound={acc.space_id!r} but server returned {rm_spaces!r}"))
         print(_render_doctor(checks, as_json=args.json_out))
         return 1
+
+    # 4b) Bound workspace AI feature enabled
+    space_rec = _walk_record(rm_spaces_map.get(acc.space_id, {}))
+    if not _is_space_ai_enabled(space_rec):
+        checks.append(("fail", "workspace AI feature enabled",
+                       f"space {acc.space_name!r} ({acc.space_id}) has AI features disabled in settings"))
+        print(_render_doctor(checks, as_json=args.json_out))
+        return 1
+    checks.append(("ok", "workspace AI feature enabled", "active"))
 
     # 5) User model map (informational)
     user_map = load_user_model_map()

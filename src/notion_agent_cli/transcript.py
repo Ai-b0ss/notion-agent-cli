@@ -330,10 +330,12 @@ def build_inference_request(
         "setUnreadState":          True,
         "threadType":              "workflow",
         "asPatchResponse":         as_patch_response,
+        "patchResponseVersion":    2,
         "hasHeartbeat":            False,
         "createdSource":           "custom_agent" if workflow_id else "ai_module",
         "isUserInAnySalesAssistedSpace": False,
         "isSpaceSalesAssisted":         False,
+        "supportsCustomAgentNudgeTranscriptStep": True,
         "debugOverrides": {
             "emitAgentSearchExtractedResults": True,
             "cachedInferences":     {},
