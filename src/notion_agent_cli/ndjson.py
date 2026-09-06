@@ -98,8 +98,6 @@ class NDJSONStreamParser:
     """Stateful parser for runInferenceTranscript NDJSON streams."""
 
     def __init__(self) -> None:
-        self.text: str = ""
-        self.thinking: str = ""
         self.input_tokens: int = 0
         self.output_tokens: int = 0
         self.cache_read_tokens: int = 0
@@ -108,13 +106,43 @@ class NDJSONStreamParser:
         self.line_count: int = 0
         self.event_type_counts: dict[str, int] = {}
 
-        # Path prefix "/s/N/value/M" → entry type ("text"|"thinking"|"tool_use")
-        self._value_types: dict[str, str] = {}
-        # Path prefix "/s/N" → number of value entries seen
+        # Slot tracking for patch mode:
+        # slot path (e.g. "/s/7/value/0") -> content string
+        self._slot_contents: dict[str, str] = {}
+        # slot path -> type ("text"|"thinking"|"tool_use")
+        self._slot_types: dict[str, str] = {}
+        # Ordered list of slot paths to maintain insertion order
+        self._slot_order: list[str] = []
+
+        # Number of value entries seen per section prefix ("/s/N")
         self._value_counts: dict[str, int] = {}
-        # Number of top-level sections (/s) seen — used to assign an
-        # index to /s/- (append) patches so later /s/N/... patches align.
+        # Number of top-level sections (/s) seen
         self._section_count: int = 0
+
+        # Legacy (asPatchResponse=false) mode accumulators
+        self._legacy_text: str = ""
+        self._legacy_thinking: str = ""
+        self._has_legacy: bool = False
+
+    @property
+    def text(self) -> str:
+        if self._has_legacy:
+            return self._legacy_text
+        return "".join(
+            self._slot_contents[s]
+            for s in self._slot_order
+            if self._slot_types.get(s) == "text"
+        )
+
+    @property
+    def thinking(self) -> str:
+        if self._has_legacy:
+            return self._legacy_thinking
+        return "".join(
+            self._slot_contents[s]
+            for s in self._slot_order
+            if self._slot_types.get(s) == "thinking"
+        )
 
     # ---------------------------- public API ---------------------------- #
 
@@ -178,14 +206,35 @@ class NDJSONStreamParser:
 
     # ---------------------------- patch mode ---------------------------- #
 
+    def _register_slot(
+        self,
+        slot_path: str,
+        entry_type: str | None,
+        initial_content: str = "",
+    ) -> None:
+        if slot_path not in self._slot_order:
+            self._slot_order.append(slot_path)
+        if entry_type:
+            self._slot_types[slot_path] = entry_type
+        if slot_path not in self._slot_contents:
+            self._slot_contents[slot_path] = initial_content
+        elif initial_content:
+            current = self._slot_contents[slot_path]
+            self._slot_contents[slot_path] = _handle_patch_replace(current, initial_content)
+
+    def _extract_slot_path(self, path: str) -> str:
+        idx = path.rfind("/content")
+        if idx >= 0:
+            return path[:idx]
+        return path
+
     def _handle_patch_start(self, event: dict[str, Any]) -> None:
         data = event.get("data") or {}
         s = data.get("s")
         if isinstance(s, list):
-            self._section_count = len(s)
+            self._section_count = max(self._section_count, len(s))
             for i, entry in enumerate(s):
                 _raise_if_error_entry(entry)
-                self._value_counts.setdefault(f"/s/{i}", 0)
                 if isinstance(entry, dict):
                     self._absorb_inline_section(i, entry)
 
@@ -212,22 +261,16 @@ class NDJSONStreamParser:
             self._absorb_inline_section(section_idx, v)
             return
 
-        # 1) New value entry added at /s/N/value/- → register its type.
+        # 1) New value entry added at /s/N/value/- → register its slot.
         if o == "a" and "/value/-" in p and isinstance(v, dict):
-            entry_type = v.get("type")
             state_prefix = p[: p.index("/value/")]
             idx = self._value_counts.get(state_prefix, 0)
-            entry_path = f"{state_prefix}/value/{idx}"
-            if isinstance(entry_type, str):
-                self._value_types[entry_path] = entry_type
+            slot_path = f"{state_prefix}/value/{idx}"
             self._value_counts[state_prefix] = idx + 1
 
-            content = v.get("content")
-            if isinstance(content, str) and content and entry_type in ("text", "thinking"):
-                if entry_type == "text":
-                    self.text += content
-                else:
-                    self.thinking += content
+            entry_type = v.get("type") or "text"
+            content = v.get("content") or ""
+            self._register_slot(slot_path, entry_type, content)
             return
 
         # 2) Usage tokens (per-section).
@@ -254,34 +297,24 @@ class NDJSONStreamParser:
             return
         if not isinstance(v, str):
             return
-        entry_type = self._classify_content_path(p)
+
+        slot_path = self._extract_slot_path(p)
+        entry_type = self._slot_types.get(slot_path, "text")
         if entry_type == "tool_use":
             return
-        if entry_type == "thinking":
-            if o == "x":
-                self.thinking += v
-            elif o == "p":
-                self.thinking = v
-            return
-        if o == "x":
-            self.text += v
-        elif o == "p":
-            self.text = _handle_patch_replace(self.text, v)
 
-    def _classify_content_path(self, path: str) -> str:
-        idx = path.rfind("/content")
-        if idx < 0:
-            return "text"
-        prefix = path[:idx]
-        return self._value_types.get(prefix, "text")
+        if slot_path not in self._slot_contents:
+            self._register_slot(slot_path, entry_type, "")
+
+        if o == "x":
+            self._slot_contents[slot_path] = self._slot_contents[slot_path] + v
+        elif o == "p":
+            self._slot_contents[slot_path] = _handle_patch_replace(self._slot_contents[slot_path], v)
 
     def _absorb_inline_section(self, section_idx: int, section: dict[str, Any]) -> None:
-        """A new section appended at ``/s/-`` may carry inline value entries.
+        """Absorb a section (from patch-start, patch-sync, or /s/- op) into slot tracking.
 
-        Register each entry's type at the ``/s/N/value/M`` slot AND
-        capture any inline ``content`` directly. Later patches that
-        target ``/s/N/value/M/content`` keep working through the
-        existing classification path.
+        Registers each entry at ``/s/N/value/M`` slot and updates/reconciles content.
         """
         section_type = section.get("type")
         values = section.get("value")
@@ -293,33 +326,34 @@ class NDJSONStreamParser:
         for i, entry in enumerate(values):
             if not isinstance(entry, dict):
                 continue
-            etype = entry.get("type")
-            entry_path = f"{section_prefix}/value/{i}"
-            if isinstance(etype, str):
-                self._value_types[entry_path] = etype
-            content = entry.get("content")
-            if isinstance(content, str) and content:
-                if etype == "text":
-                    self.text += content
-                elif etype == "thinking":
-                    self.thinking += content
-        self._value_counts[section_prefix] = len(values)
+            etype = entry.get("type") or "text"
+            content = entry.get("content") or ""
+            slot_path = f"{section_prefix}/value/{i}"
+            self._register_slot(slot_path, etype, content)
+        self._value_counts[section_prefix] = max(self._value_counts.get(section_prefix, 0), len(values))
 
     # ----------------------- legacy / non-patch mode -------------------- #
 
     def _handle_agent_inference(self, event: dict[str, Any]) -> None:
         """Handle ``asPatchResponse=false`` mode (cumulative agent-inference)."""
+        self._has_legacy = True
         values = event.get("value")
         if isinstance(values, list):
+            text_parts: list[str] = []
+            thinking_parts: list[str] = []
             for entry in values:
                 if not isinstance(entry, dict):
                     continue
                 etype = entry.get("type")
                 content = entry.get("content")
                 if etype == "text" and isinstance(content, str):
-                    self.text = content  # cumulative — replace
+                    text_parts.append(content)
                 elif etype == "thinking" and isinstance(content, str):
-                    self.thinking = content
+                    thinking_parts.append(content)
+            if text_parts:
+                self._legacy_text = "".join(text_parts)
+            if thinking_parts:
+                self._legacy_thinking = "".join(thinking_parts)
 
         if _is_int(event.get("inputTokens")):
             self.input_tokens += int(event["inputTokens"])
