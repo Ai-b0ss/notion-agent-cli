@@ -792,10 +792,25 @@ def _cmd_doctor(args: argparse.Namespace) -> int:
         checks.append(("ok", "bound space_id present in workspaces",
                        f"{len(rm_spaces)} workspaces total"))
     else:
-        checks.append(("fail", "bound space_id present in workspaces",
-                       f"bound={acc.space_id!r} but server returned {rm_spaces!r}"))
-        print(_render_doctor(checks, as_json=args.json_out))
-        return 1
+        # Check if bound space is directly accessible via sync_record
+        client = NotionAgentClient(args.account)
+        try:
+            res = asyncio.run(client.sync_record("space", acc.space_id, with_space_id=False))
+            synced_spaces = (res.get("recordMap") or {}).get("space") or {}
+            if acc.space_id in synced_spaces:
+                rm_spaces_map[acc.space_id] = synced_spaces[acc.space_id]
+                checks.append(("ok", "bound space_id present in workspaces",
+                               "verified workspace access via syncRecordValues"))
+            else:
+                checks.append(("fail", "bound space_id present in workspaces",
+                               f"bound={acc.space_id!r} but server returned {rm_spaces!r}"))
+                print(_render_doctor(checks, as_json=args.json_out))
+                return 1
+        except Exception as exc:
+            checks.append(("fail", "bound space_id present in workspaces",
+                           f"bound={acc.space_id!r} but server returned {rm_spaces!r} (sync error: {exc})"))
+            print(_render_doctor(checks, as_json=args.json_out))
+            return 1
 
     # 4b) Bound workspace AI feature enabled
     space_rec = _walk_record(rm_spaces_map.get(acc.space_id, {}))
