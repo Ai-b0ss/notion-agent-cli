@@ -223,6 +223,81 @@ Guard: preserve its explicit idempotency/privacy/rate-limit boundaries; do not r
 
 ---
 
+---
+
+## L11 — Cross-repository proof-carrier mesh
+
+**Lineage ID:** `proof-carrier-mesh`
+
+The most misleading repository boundary is `qwen-free-api`: at the snapshot it has 90 open PRs, **81 under `ci/*`**. Its own object index classifies three roles:
+
+- Qwen live/offline exact-source and gating laboratory;
+- Kontur Chromium/browser QA carrier;
+- Notion Stage-B/provider proof carrier.
+
+Examples:
+- PRs #29–#85 contain successive Qwen exact-head Linux/Windows failure localization, reliability and gate work. They are largely a diagnostic/proof sequence, not dozens of product features.
+- PRs #13–#15 and #27 carried Kontur Chromium/cross-repo QA.
+- PR #118 is explicitly a provider-free Notion Stage-B Windows carrier.
+- PR #134 is a provider-session preflight carrier.
+- PR #95 is the known counterexample where a one-file `express` fix inherits a huge historical base.
+
+Guard: classify the **payload and target system**, not the repository that happened to execute CI. A carrier PR is not ownership transfer of the product.
+
+---
+
+## L12 — Notion Agent matrix → promoted-v3 recovery → Stage-B delivery
+
+**Lineage ID:** `notion-stage-b-delivery`
+
+This is a diagnostic/proof lineage inside the broader Notion/NCM history.
+
+### Epoch A — Agent prompt/matrix/materialization
+- PR #8 establishes engineer/owner prompt-mode contract.
+- PRs #9–#32 are successive exact Agent pair, materialization, cleanup, fixture and safety-matrix proofs.
+
+### Epoch B — promoted-v3 crash/recovery
+- PRs #35–#50 cover promoted installer identity, postwrite crash recovery, absent/staged payload handling and Agent+Core proof.
+
+### Epoch C — Stage-B native Windows delivery
+- PRs #51–#77 form a sequential delivery investigation: server integration, Circle routing, same-byte/native proof, CRLF recomposition, object-origin boundaries, preamble/transport diagnostics, prepare traces/classifiers, PYTHONPATH/EOL fixes and final sanitized delivery probes.
+- `qwen-free-api#118` is a provider-free carrier for this Stage-B line rather than Qwen product work.
+
+Guard: treat this as a **serial debugging lineage**. Do not count each diagnostic PR as an independent unfinished feature, and never discard later fixes merely because an earlier carrier PR failed.
+
+---
+
+## L13 — Kontur Cloudflare deployment/proof
+
+**Lineage ID:** `kontur-cloudflare-deployment`
+
+Separate deployment history from the visual/product and AUTOPILOT lineages:
+
+- PR #6 — promote isolated Cloudflare staging path.
+- PR #7 — prove real staging product API path.
+- PR #8 — verify forbidden production targets remain unchanged.
+- PR #10 — integrate staging product proof plus production post-check.
+- PR #17 — canonical Linux build gate.
+- PR #18 — production D1 read-only capability probe.
+
+Guard: a staging/deployment proof is not a product-design authority, and a read-only production capability probe is not permission for production writes.
+
+---
+
+## L14 — Q15 provider-free execution surface
+
+**Lineage ID:** `q15-provider-free-execution`
+
+Open `qwen-workspace` evidence preserves a distinct late-August execution-surface investigation:
+
+- PR #92 — disposable Q15 provider-free execution-surface proof.
+- PR #93 — secure SSH execution-surface verification.
+- PR #98 — native Circle provider-free execution proof.
+- Nearby PR #97 adds a Windows Circle read broker; PR #99 then explores authenticated GitHub self-hosted transport in the broader Free Fabric line.
+
+Guard: Q15 is an execution/proof sublineage, not equivalent to Qwen model-runtime capability and not automatically the canonical Free Fabric transport.
+
+
 ## Cross-lineage rules
 
 - **PR metadata beats stale prose.** A body can describe an earlier draft state; fetch live object state.
