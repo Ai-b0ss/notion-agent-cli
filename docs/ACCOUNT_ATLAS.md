@@ -123,6 +123,19 @@ Private PR #3 explicitly established that private GitHub was a structural supers
 - PR #1: reproducible cross-Windows/Linux release archive proof.
 - PR #2: reusable public scheduler/control-plane contracts (state validation, sticky leases, dependency transitions, provider outcome classification). It aligns closely in timing and design with Kontur AUTOPILOT v4.1.
 
+## Complete PR ledgers
+
+A static **all-state PR ledger** now exists at `.agent/pr-ledger.json` in every owned repository. Across the 9 owned repositories the snapshot covers **441 / 441 PRs**: open, merged and closed-unmerged.
+
+Each record preserves the PR's real `base` / `base_sha`, `head` / `head_sha`, current snapshot state, draft/merged flags, dates, commit count, URL and a short purpose hint. This closes a major archaeology gap in the older object index, which emphasized open PRs.
+
+Use the ledger for exhaustive navigation, then fetch the live PR before acting. In particular:
+- do not estimate a PR from head-vs-current-main when its recorded base is historical;
+- do not classify closed-unmerged as abandoned without checking descendants/integration PRs;
+- do not treat CI/proof carrier location as product ownership.
+
+The two public repositories contain only their own already-public PR history; their ledgers do not expose private account topology.
+
 ## notion-agent-bridge Issues = operational database
 
 Snapshot prefix counts:
