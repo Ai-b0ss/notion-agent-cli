@@ -378,5 +378,61 @@
     "idea_lineages_machine": ".agent/idea-lineages.json",
     "local_github_objects": ".agent/github-objects-index.json",
     "rule": "Repository topology and idea/system lineage are separate layers. Resolve lineage_id and epoch before treating a repository as the project boundary."
+  },
+  "complete_pr_ledger_snapshot": {
+    "schema": "account-owned-pr-ledger-map-v1",
+    "snapshot_date": "2026-10-06",
+    "total_owned_prs": 441,
+    "completeness_note": "For each owned repository, open and closed PR search partitions were each below the 100-result cap and their combined counts matched the existing account-index totals.",
+    "ledgers": [
+      {
+        "repository": "Ai-b0ss/human-1.5",
+        "path": ".agent/pr-ledger.json",
+        "prs": 1
+      },
+      {
+        "repository": "Ai-b0ss/qwen-workspace",
+        "path": ".agent/pr-ledger.json",
+        "prs": 128
+      },
+      {
+        "repository": "Ai-b0ss/qwen-free-api",
+        "path": ".agent/pr-ledger.json",
+        "prs": 134
+      },
+      {
+        "repository": "Ai-b0ss/notion-agent-bridge",
+        "path": ".agent/pr-ledger.json",
+        "prs": 140
+      },
+      {
+        "repository": "Ai-b0ss/kontur",
+        "path": ".agent/pr-ledger.json",
+        "prs": 27
+      },
+      {
+        "repository": "Ai-b0ss/ai-mirrors",
+        "path": ".agent/pr-ledger.json",
+        "prs": 4
+      },
+      {
+        "repository": "Ai-b0ss/free-fabric-ci",
+        "path": ".agent/pr-ledger.json",
+        "prs": 5,
+        "privacy": "public self-history only"
+      },
+      {
+        "repository": "Ai-b0ss/notion-agent-cli",
+        "path": ".agent/pr-ledger.json",
+        "prs": 1
+      },
+      {
+        "repository": "Ai-b0ss/chatgpt-429-conversation-recovery",
+        "path": ".agent/pr-ledger.json",
+        "prs": 1,
+        "privacy": "public self-history only"
+      }
+    ],
+    "use": "Consult the relevant ledger before claiming prior PR work is absent, abandoned, or too large based on head-vs-main. Re-fetch the live PR before freshness-sensitive action."
   }
 }
