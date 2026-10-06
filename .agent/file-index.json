@@ -1,0 +1,164 @@
+{
+  "schema": "agent-file-index-v1",
+  "repository": "Ai-b0ss/notion-agent-cli",
+  "branch": "main",
+  "note": "Small Python package: trace CLI -> provider/transcript/account/thread modules -> tests. Run tools/build_agent_index.py for branch-local symbol lines.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "blob": "c42237e91e18fed121dfbfe39ac74eeab48c7721",
+      "bytes": 280,
+      "role": "project_file"
+    },
+    {
+      "path": "LICENSE",
+      "blob": "a3bac8e5786e9247ae8d2039468b90974a3717a8",
+      "bytes": 1066,
+      "role": "documentation"
+    },
+    {
+      "path": "README.md",
+      "blob": "f0f09461e2c86bd85b35e705d78faa94d744c7e8",
+      "bytes": 10993,
+      "role": "documentation"
+    },
+    {
+      "path": "pyproject.toml",
+      "blob": "793605438fcf4657ced169f83ac4414ef58a1425",
+      "bytes": 752,
+      "role": "packaging"
+    },
+    {
+      "path": "src/notion_agent_cli/__init__.py",
+      "blob": "c5a8d71cf4cc6c61d165f1dc5938e7d3a9692f64",
+      "bytes": 1542,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/account.py",
+      "blob": "fedd26dad51688de00b2398d36e6843b15a7ebbb",
+      "bytes": 6909,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/agents.py",
+      "blob": "f87c83b1be2435e4ffe5e7185e79852e1d8063e4",
+      "bytes": 11562,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/bootstrap.py",
+      "blob": "f73a397f23a410bbded0b6734377c07f9c8e36bb",
+      "bytes": 12809,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/cli/__init__.py",
+      "blob": "82e1886f922603a1007b11917cb4f0d56cb3b815",
+      "bytes": 293,
+      "role": "cli_entry"
+    },
+    {
+      "path": "src/notion_agent_cli/cli/__main__.py",
+      "blob": "e9d83cb3e42144251dca223c06724701c75e3c0d",
+      "bytes": 79804,
+      "role": "cli_entry"
+    },
+    {
+      "path": "src/notion_agent_cli/exceptions.py",
+      "blob": "7ed9b4cb0ba8df365c90b157ec262c8cf9468a99",
+      "bytes": 6115,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/models.py",
+      "blob": "f0cc937d10ee6fb7de6bea3e2fa321705bdd9dce",
+      "bytes": 7236,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/ndjson.py",
+      "blob": "217b3d99afa44ca76ca5de053bf6822b370a7560",
+      "bytes": 14230,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/profile.py",
+      "blob": "b31c0fc9d0ebefcef48f15744cd08334424f6d37",
+      "bytes": 6581,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/provider.py",
+      "blob": "83e26f30ee288115aea6083f6984bb61b3a0c5d9",
+      "bytes": 44664,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/runs.py",
+      "blob": "78cbcff62fe6c19a2b23a419664a69da7f61d0c2",
+      "bytes": 5970,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/serve.py",
+      "blob": "b5015cf69c398cbc9e781c032aeef29f17385118",
+      "bytes": 12226,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/thread_state.py",
+      "blob": "7b6692f22effbaa7f9639cc854fc1744d9cf2977",
+      "bytes": 2966,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/transcript.py",
+      "blob": "d362b43b2ea0fe48459eef8740fb0ada5851dfe9",
+      "bytes": 13618,
+      "role": "library_runtime"
+    },
+    {
+      "path": "src/notion_agent_cli/types.py",
+      "blob": "b7a65de111fe549c3362db15ecb24f9083ebcf72",
+      "bytes": 586,
+      "role": "library_runtime"
+    },
+    {
+      "path": "tests/test_account_cookie_merge.py",
+      "blob": "24a0cf7f203386eca3fe949ddeaf50e07e8d17ec",
+      "bytes": 3366,
+      "role": "test"
+    },
+    {
+      "path": "tests/test_ndjson_patch_sync.py",
+      "blob": "6f9201542a62158a410204181bf8bfde27609a55",
+      "bytes": 9206,
+      "role": "test"
+    },
+    {
+      "path": "tests/test_platform_hints.py",
+      "blob": "690ee90f3a9e212b1c81be05576d1c3b03ba3cae",
+      "bytes": 2224,
+      "role": "test"
+    },
+    {
+      "path": "tests/test_transcript_v2_nudge.py",
+      "blob": "afe92c85c83a165759d1caf3f70a230749dbdb9e",
+      "bytes": 1354,
+      "role": "test"
+    },
+    {
+      "path": "tests/test_workspace_binding.py",
+      "blob": "16be9cd2b1d0523ea6f187697971d50eb726341f",
+      "bytes": 7195,
+      "role": "test"
+    },
+    {
+      "path": "tools/build_agent_index.py",
+      "blob": "6e97262afe88d48dd498ec6be3cdaf8d748259ff",
+      "bytes": 3455,
+      "role": "agent_tooling"
+    }
+  ]
+}
