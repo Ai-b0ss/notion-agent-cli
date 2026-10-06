@@ -106,14 +106,50 @@ Guard: do not treat the diagnostic PR chain as random CI noise; equally, do not 
 **Lineage ID:** `qwen-standalone`
 
 Surfaces:
-- `qwen-free-api`: local proxy/runtime and session/account behavior.
-- `qwen-workspace`: system-level Qwen adapter, auth and Free Fabric integration.
+- `qwen-free-api`: local proxy/runtime, session/account behavior, portable launch and the densest runtime proof ladder.
+- `qwen-workspace`: system-level Qwen adapter/auth integration and the later standalone-closure dossier.
 
-Key object: `qwen-workspace#130` (`feat/qwen-standalone-closure-proof`).
+### Epoch A — encrypted runtime-state preflight
+- `qwen-free-api#6`: verifies the existing encrypted runtime archive can be hydrated/decrypted on a runner without printing secrets and **without calling Qwen**.
 
-Current recorded state: **OPEN / UNMERGED / DO NOT MERGE** pending curator evaluation. Its live audit reached upstream auth but the stored Qwen pool was expired; direct and OpenCode live continuation therefore remain unproven on that head.
+### Epoch B — exact-head reliability convergence
+The large `ci/*` family is a serial proof ladder rather than dozens of product features. Representative anchors:
+- #51: exact `47d9` QWEN_CORE recovery proof.
+- #60: exact `a658` Core + Reliability sync.
+- #69: exact `f24` session/restart gate after CRLF portability repair.
+- #78: exact `5ed` session durability on Linux and native Windows.
+- #84: exact `ada1237` QWEN_RELIABILITY proof.
 
-Guard: do not turn an auth-pool/environment blocker into either “system broken” or “feature proven”.
+These PRs are mostly config/harness carriers restoring exact product bytes. **DO NOT MERGE** is often an evidence classification, not an abandoned feature label.
+
+### Epoch C — bounded live acceptance
+- #92: bounded live acceptance on exact `ada1237`: OpenCode tool-result continuation, same-session restart/state, controlled legitimate account failover and one sparse soak.
+- #98: successor live acceptance on exact `c1` after clean install/server/full Linux/native-Windows gates.
+
+Live acceptance is stronger than provider-free CI, but it remains scoped to the exact product revision and the calls authorized by that carrier.
+
+### Epoch D — product safety correction
+- #99 is **merged**: suppresses an immediate successful duplicate tool replay so a mutating tool is not blindly executed twice.
+- Its own evidence explicitly says multi-round tools were still unstable afterward. This is a safety fix, not proof that the whole tool loop became healthy.
+
+### Epoch E — OpenCode execution-witness / harness diagnosis
+- #104–#105: source-verified OpenCode execution witness and session-identity repair.
+- #110–#112: least-tool pin repair and continuation witnesses.
+- #116, #119–#121: delivery/stage-localization/inner-HARNESS diagnostics.
+
+Treat this as one evolving evidence apparatus. A failed harness stage is not automatically a Qwen-model failure, and a carrier repair is not automatically a product-code change.
+
+### Epoch F — portable Windows standalone release
+- #123 is **merged** and proves a provider-free Windows release path: `QWEN_START.cmd`, clean release-ZIP extraction, dependency bootstrap, real local `server.js` + `/healthz`, cleanup and exact-head Ubuntu/Windows CI.
+- Exact recorded artifact: `qwen-free-api-windows-d363fa492589b09f5aaa81c454f0c463ee81bdc9`, artifact id `9798030182`, digest `sha256:1c191c08e799e3786e6dba68724236dfb3827f3aaaffd03ffcae8bc628cdafea`.
+
+This proves packaging/launch/runtime health **without** proving an authenticated live Qwen inference.
+
+### Epoch G — later standalone closure dossier
+- `qwen-workspace#130` remains **OPEN / UNMERGED / DO NOT MERGE** pending curator evaluation.
+- Its live audit reached upstream auth, but the stored Qwen pool was expired; direct and OpenCode live continuation therefore remain unproven on that head.
+
+Guard: keep four states separate: provider-free runtime reliability, live-provider capability, merged product fixes, and carrier/harness evidence. Do not turn an auth-pool/environment blocker into either “system broken” or “feature proven”.
 
 ---
 
@@ -241,20 +277,22 @@ Guard: preserve its explicit idempotency/privacy/rate-limit boundaries; do not r
 
 **Lineage ID:** `proof-carrier-mesh`
 
-The most misleading repository boundary is `qwen-free-api`: at the snapshot it has 90 open PRs, **81 under `ci/*`**. Its own object index classifies three roles:
+The most misleading repository boundary is `qwen-free-api`: at the snapshot it has 90 open PRs, **81 under `ci/*`**. Its own object index classifies multiple carrier roles rather than 81 unfinished product features.
 
-- Qwen live/offline exact-source and gating laboratory;
-- Kontur Chromium/browser QA carrier;
-- Notion Stage-B/provider proof carrier.
+Qwen carrier subepochs:
+- **#29–#94 — exact-head convergence/localization:** successive QWEN_CORE/QWEN_RELIABILITY, Linux/native-Windows and runner-localization proofs around frozen product SHAs.
+- **#92/#98 — bounded live acceptance:** live-provider evidence on exact selected revisions, still carried by disposable CI branches.
+- **#100–#112 — execution witness/continuation:** dynamic stage, OpenCode witness, least-tool and continuation diagnostics; distinguish harness failure from model/runtime failure.
+- **#116/#119–#121 — delivery and inner-HARNESS localization:** evidence transport and wrapper-stage diagnosis, not product features.
+- **#122 — Q15 one-live carrier:** belongs semantically to the Q15 execution-surface lineage even though it lives in `qwen-free-api`.
+- **#134 — provider-session preflight carrier:** proof infrastructure, not a release.
 
-Examples:
-- PRs #29–#85 contain successive Qwen exact-head Linux/Windows failure localization, reliability and gate work. They are largely a diagnostic/proof sequence, not dozens of product features.
-- PRs #13–#15 and #27 carried Kontur Chromium/cross-repo QA.
-- PR #118 is explicitly a provider-free Notion Stage-B Windows carrier.
-- PR #134 is a provider-session preflight carrier.
-- PR #95 is the known counterexample where a one-file `express` fix inherits a huge historical base.
+Other cross-repo carrier roles:
+- #13–#15 and #27 carried Kontur Chromium/cross-repo QA.
+- #118 is explicitly a provider-free Notion Stage-B Windows carrier.
+- #95 remains the canonical base-history warning: a tiny one-file `express` fix inherits an old autopilot base, so head-vs-modern-main wildly overstates its scope.
 
-Guard: classify the **payload and target system**, not the repository that happened to execute CI. A carrier PR is not ownership transfer of the product.
+Guard: classify the **payload and target system**, not the repository that happened to execute CI. A carrier PR is not ownership transfer of the product. A red carrier can mean harness/runner/delivery failure; bind the failure to its exact stage before attributing it to product code.
 
 ---
 
@@ -300,15 +338,18 @@ Guard: a staging/deployment proof is not a product-design authority, and a read-
 
 **Lineage ID:** `q15-provider-free-execution`
 
-Open `qwen-workspace` evidence preserves a distinct late-August execution-surface investigation:
+This late-August execution-surface investigation spans both Qwen repositories:
 
+In `qwen-workspace`:
 - PR #92 — disposable Q15 provider-free execution-surface proof.
-- PR #93 — secure SSH execution-surface verification.
-- PR #98 — native Circle provider-free execution proof.
-- Nearby PR #97 adds a Windows Circle read broker; PR #99 then explores authenticated GitHub self-hosted transport in the broader Free Fabric line.
+- #93 — secure SSH execution-surface verification.
+- #98 — native Circle provider-free execution proof.
+- Nearby #97 adds a Windows Circle read broker; #99 explores authenticated GitHub self-hosted transport in the broader Free Fabric line.
 
-Guard: Q15 is an execution/proof sublineage, not equivalent to Qwen model-runtime capability and not automatically the canonical Free Fabric transport.
+In `qwen-free-api`:
+- PR #122 — one-live Q15 witness on exact `3b27` release, with the runtime key scoped only to the finite harness invocation and sanitized stage/first-fail evidence.
 
+Guard: Q15 is an execution/proof sublineage, not equivalent to general Qwen model-runtime capability and not automatically the canonical Free Fabric transport. Provider-free Q15 proof and the one-live witness are different evidence classes.
 
 ---
 
