@@ -4,12 +4,14 @@
 Before every substantial repository task, also read:
 
 1. `docs/ACCOUNT_ATLAS.md` — private cross-repository topology, hidden work clusters and absence-test protocol.
-2. `.agent/account-index.json` — machine-readable account/repository graph snapshot.
-3. `.agent/github-objects-index.json` — this repository's PR/issue/workflow/tag archaeology.
+2. `docs/IDEA_LINEAGES.md` — cross-repository system/idea lifetimes and epoch transitions.
+3. `.agent/account-index.json` — machine-readable account/repository graph snapshot.
+4. `.agent/idea-lineages.json` — machine-readable lineage IDs, aliases, key objects and evidence boundaries.
+5. `.agent/github-objects-index.json` — this repository's PR/issue/workflow/tag archaeology.
 
 These are navigation snapshots, not live authority: re-resolve current GitHub state when freshness matters.
 
-Reading the atlas is mandatory; exhaustively searching every other repository is not. Expand account-wide archaeology when the task may overlap prior, abandoned, migrated, cross-repo or externally deployed work.
+Reading the atlas and lineage map is mandatory; exhaustively searching every other repository is not. When a task names a system/idea, resolve its lineage ID and epoch before assuming the current repository is the project boundary. Expand account-wide archaeology when the task may overlap prior, abandoned, migrated, cross-repo or externally deployed work.
 
 ---
 
