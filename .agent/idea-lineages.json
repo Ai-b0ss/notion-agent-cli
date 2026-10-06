@@ -378,7 +378,13 @@
         "Name the epoch when making a claim.",
         "Do not add overlapping test counts.",
         "Current PR metadata overrides stale body status text."
-      ]
+      ],
+      "issue_archaeology": {
+        "repository": "Ai-b0ss/notion-agent-bridge",
+        "human": "docs/ISSUE_ARCHAEOLOGY.md",
+        "machine": ".agent/issue-theme-epochs.json",
+        "reason": "Thousands of Issues are executable task envelopes/transport records and contain experiment evidence not recoverable from PRs alone."
+      }
     },
     {
       "id": "autopilot-control-plane",
@@ -639,6 +645,56 @@
         "Q15 execution proof is not equivalent to Qwen model-runtime capability.",
         "Do not automatically promote it to canonical Free Fabric transport."
       ]
+    },
+    {
+      "id": "astra-audit-state-transport",
+      "aliases": [
+        "Astra",
+        "ASTRA-EVIDENCE-EXPORT",
+        "Astra adjudication"
+      ],
+      "repositories": [
+        "Ai-b0ss/notion-agent-bridge issue transport"
+      ],
+      "sampled_span": [
+        "2026-09-07",
+        "2026-09-08"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/notion-agent-bridge",
+          "issues": [
+            132,
+            133,
+            134,
+            135,
+            136
+          ],
+          "role": "audit/checkpoint/source-context archaeology"
+        },
+        {
+          "repo": "Ai-b0ss/notion-agent-bridge",
+          "issues": [
+            210,
+            211
+          ],
+          "role": "evidence export/shard transfer"
+        },
+        {
+          "repo": "Ai-b0ss/notion-agent-bridge",
+          "issues": [
+            217,
+            229,
+            230
+          ],
+          "role": "transport cleanup and durable state packaging"
+        }
+      ],
+      "issue_archaeology": ".agent/issue-theme-epochs.json",
+      "guards": [
+        "Transport repository does not imply product ownership.",
+        "Issue-task execution evidence must be bound to its own source/state provenance."
+      ]
     }
   ],
   "discovery_notes": {
@@ -647,6 +703,13 @@
     "qwen_free_api_open_pr_snapshot": {
       "total": 90,
       "ci_family": 81
+    },
+    "issue_ledger_followup": {
+      "repository": "Ai-b0ss/notion-agent-bridge",
+      "indexed_issues": 3698,
+      "artifact": "docs/ISSUE_ARCHAEOLOGY.md",
+      "machine_artifact": ".agent/issue-theme-epochs.json",
+      "new_lineage": "astra-audit-state-transport"
     }
   }
 }
