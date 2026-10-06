@@ -371,5 +371,12 @@
     "GitHub Actions listing is only partially visible through the current connector; workflow files, commit runs, PR descriptions and saved evidence remain discoverable.",
     "Uncommitted local work, garbage-collected commits and external artifacts not linked anywhere remain outside GitHub archaeology.",
     "Open PRs can be stale, disposable or intentionally DO NOT MERGE; inspect base, head, body, diff and later history before reuse."
-  ]
+  ],
+  "navigation": {
+    "repository_topology": "docs/ACCOUNT_ATLAS.md",
+    "idea_lineages": "docs/IDEA_LINEAGES.md",
+    "idea_lineages_machine": ".agent/idea-lineages.json",
+    "local_github_objects": ".agent/github-objects-index.json",
+    "rule": "Repository topology and idea/system lineage are separate layers. Resolve lineage_id and epoch before treating a repository as the project boundary."
+  }
 }
