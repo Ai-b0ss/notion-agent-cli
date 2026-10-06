@@ -11,6 +11,18 @@
       "role": "agent_tooling"
     },
     {
+      "path": ".cursor/rules/repository-navigation.mdc",
+      "blob": "0794e048f55abf3590390c38b5c75db9f5efc54b",
+      "bytes": 658,
+      "role": "agent_tooling"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "blob": "1efac671cf6ddc5cdfdeb279bcd19e2bebc30014",
+      "bytes": 574,
+      "role": "agent_tooling"
+    },
+    {
       "path": ".gitignore",
       "blob": "c42237e91e18fed121dfbfe39ac74eeab48c7721",
       "bytes": 280,
@@ -18,9 +30,21 @@
     },
     {
       "path": "AGENTS.md",
-      "blob": "77cfc7628f69390c6ed9d41288c7a99a924afb83",
-      "bytes": 920,
-      "role": "documentation"
+      "blob": "35883b53f2d0cf9a341b3e6715bda5919e420e93",
+      "bytes": 1871,
+      "role": "agent_tooling"
+    },
+    {
+      "path": "CLAUDE.md",
+      "blob": "c92840b89e49539ec1da2f95060d962a0687fd17",
+      "bytes": 703,
+      "role": "agent_tooling"
+    },
+    {
+      "path": "GEMINI.md",
+      "blob": "9a0eeffd26f59d4b73fba0d17bcd5d128677b043",
+      "bytes": 588,
+      "role": "agent_tooling"
     },
     {
       "path": "LICENSE",
@@ -38,7 +62,13 @@
       "path": "docs/AGENT_NAVIGATION.md",
       "blob": "b0797d8495ee0fc2e9f3189481e9d35dd8b6fc13",
       "bytes": 1471,
-      "role": "documentation"
+      "role": "agent_tooling"
+    },
+    {
+      "path": "docs/AGENT_OPERATING_SYSTEM.md",
+      "blob": "a156e0951e04035a2154faf55bf18979f54447e7",
+      "bytes": 10413,
+      "role": "agent_tooling"
     },
     {
       "path": "pyproject.toml",
@@ -171,6 +201,12 @@
       "blob": "16be9cd2b1d0523ea6f187697971d50eb726341f",
       "bytes": 7195,
       "role": "test"
+    },
+    {
+      "path": "tools/agent_history.py",
+      "blob": "e5bafa35894387de114935bbcd88607b7074851e",
+      "bytes": 14293,
+      "role": "agent_tooling"
     },
     {
       "path": "tools/build_agent_index.py",
