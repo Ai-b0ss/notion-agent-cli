@@ -134,6 +134,7 @@ The account navigation layer passed a cross-repository consistency audit.
 - **9 / 9 `AGENTS.md`** files now directly require the ledger when historical/prior/superseded work may matter.
 - **9 / 9 `.agent/github-objects-index.json`** files link to the ledger.
 - The 7 private repositories share byte-identical account/lineage canon; the 2 public repositories expose only their own public PR history and explicitly preserve the privacy boundary.
+- **756 / 756 live branches** across all 9 owned repositories are present in their `.agent/branch-index.json`; there are no missing live branch names and no stale branch-name entries. Stored non-main head SHAs remain snapshots and must be re-resolved before mutation.
 
 State split is important: the **117 closed-unmerged PRs are first-class archaeology**, not an automatic “abandoned” bucket. Check descendants, integration PRs, exact heads and proof-carrier roles before classification.
 
