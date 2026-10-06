@@ -18,4 +18,4 @@
 For any CLI command trace: argument parsing → selected module → HTTP/provider call → transcript decoding → persisted account/thread state → returned error code/output. For auth issues inspect both account bootstrap and cookie merge behavior.
 
 ## Branches and lines
-Both branch heads are recorded in `.agent/branch-index.json`. Run `python tools/build_agent_index.py` after checkout and use symbol line numbers from `.agent/local-code-index.json`; never reuse line numbers from another branch.
+Both branch heads are recorded in `.agent/branch-index.json`. Run `python tools/build_agent_index.py --ref "<branch-or-SHA>"` for the target ref from any repository checkout and use symbol line numbers from `.agent/local-code-index.json`; never reuse line numbers from another branch.
