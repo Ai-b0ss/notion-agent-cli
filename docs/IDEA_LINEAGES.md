@@ -177,6 +177,16 @@ This is the densest lineage and must be navigated by epoch.
 
 Sublineages worth searching independently: `Commander`, `Antigravity`, `FlClash`, `OmniRouter`, `WGC`, `UIA`, `Office/Excel/Word/PowerPoint`, `hidden apps`, `physical input`.
 
+Machine-readable facets under `windows-agent-control` preserve the most easily lost subhistories:
+- `commander-prelogin-rescue`: Commander cloud-health/direct-control work plus Prelogin/Session 0 rescue (#1607, #1640, #1642, #1660).
+- `antigravity-cdp`: UIA/CDP evolution through #744, #3239 and open #3298.
+- `flclash-control`: GUI/OCR/Guardian experiments in the issue ledger -> authenticated loopback controller in open #3366.
+- `omnirouter-transfer`: isolated source/build/runtime/adoption history around #395 and #461.
+- `office-structured-automation`: Excel COM/ROT and broader Office work (#966, #3220, #3834).
+- `capture-vision-wgc`: capture/visual grounding/WGC integrity (#741, #749, #751 plus issue-ledger Gen36/RFGI evidence).
+- `ffbridge-isolation-durable`: durable outcomes, tool recovery, isolated browser, AppContainer, hidden apps, trusted-shell boundary and browser-to-document recovery (#3823–#3832).
+- `fast-network-rescue`: FF-FAST transport, network guardian/supervisor and later Fast recovery (#1984, #3393, #3395 plus the FF-FAST issue stream).
+
 Issue-ledger companion for this lineage: `docs/ISSUE_ARCHAEOLOGY.md` and `.agent/issue-theme-epochs.json`. Use it because many executed experiments exist only or primarily as transport/task Issues.
 
 Guard: never call the whole lineage “NCM28”, “Bridge v3”, “CUA” or “Seven Pillars” without identifying the epoch. Never add test counts from overlapping runs.
@@ -319,6 +329,56 @@ Guard: do not infer that Astra belongs to the Windows Bridge product merely beca
 
 Primary archaeology: `notion-agent-bridge/docs/ISSUE_ARCHAEOLOGY.md`.
 
+
+---
+
+## L16 — Shared remote-agent / phone-first PR loop foundation
+
+**Lineage ID:** `remote-agent-foundation`
+
+This predates the later Free Fabric architecture and is easy to miss because the same bootstrap was copied into several product repositories on **16–17 August 2026**.
+
+### Epoch A — safe remote CI foundations
+- `qwen-workspace#1`, `qwen-free-api#1`, `kontur#1`: repository-specific offline/safe GitHub Actions foundations. The Kontur body explicitly calls this the first base contour for phone-driven branch/PR work.
+
+### Epoch B — common remote task/PR contract
+- `qwen-workspace#2`, `qwen-free-api#2`, `kontur#2`, `notion-agent-bridge#5`: a shared remote-task entry and PR contract with live/production work disabled by default.
+
+### Epoch C — autonomous repair-loop smoke
+- `kontur#3`: intentionally starts RED, requires the remote agent to read the real Actions failure, repair the marker and wait for a green rerun.
+
+Guard: this is **account-wide remote-development infrastructure**, not product ownership and not proof of later Free Fabric semantics. Do not erase it merely because Free Fabric later became the larger orchestration system.
+
+---
+
+## L17 — Free Fabric Provider Incubator / temporary-provider worker factory
+
+**Lineage ID:** `free-fabric-provider-incubator`
+
+This is a distinct sublineage inside Free Fabric. Its goal is to turn short-lived/free provider opportunities into bounded workers without confusing “API discovered” with “trusted executor”.
+
+### Epoch A — provider lead -> verified candidate
+- `qwen-workspace#100`: one-post Provider Incubator, normalized provider lead/manifest, integration-lane and promo-lifetime budgets, fail-closed live smoke.
+
+### Epoch B — OpenCode and tool-capability gates
+- #105: verified OpenAI-compatible providers can become isolated OpenCode repo-worker plans.
+- #106: a real structured harmless tool-call smoke becomes mandatory before repo execution.
+
+### Epoch C — CodeBuddy / Hy4 lane
+- #107: loopback-only authenticated CodeBuddy job adapter.
+- #108: one-post CodeBuddy/Hy4 activation with exact model/transcript marker proof.
+
+### Epoch D — isolated worker factory and sealed task flow
+- #109 explored the hardened OpenCode worktree/credential-proxy lane but stayed closed-unmerged.
+- #111 merged the caller-facing bounded worker factory.
+- #112 added exact-agent pull, scoped ticket, fresh worktree, Fabric-created sealed commit and independent-verifier handoff.
+
+### Epoch E — compute substrate expansion
+- #113–#115 add and harden the bounded Novita sandbox substrate, including teardown-liveness semantics.
+- #118 then incorporates the incubator into the larger autonomous orchestrator/compute-atlas “system finish”.
+- #124’s full-system canon explicitly names Provider Incubator as part of the reconstructed architecture.
+
+Guard: provider-free tests, merged adapters or a promo post are **not live provider proof**. Credentialed text/tool smoke and the exact execution lane remain separate evidence gates.
 
 ## Cross-lineage rules
 
