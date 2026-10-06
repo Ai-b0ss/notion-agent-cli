@@ -5,6 +5,12 @@
   "self_indexing": "`.agent/file-index.json` is intentionally omitted to avoid recursive self-staleness.",
   "files": [
     {
+      "path": ".agent/README.md",
+      "blob": "c57c6a47ad5a0badf634cfc8e2a006a1ef30e344",
+      "bytes": 1549,
+      "role": "agent_tooling"
+    },
+    {
       "path": ".agent/branch-index.json",
       "blob": "c5766db46e2dd015900504604ed28c7ad5885b6a",
       "bytes": 646,
@@ -54,8 +60,8 @@
     },
     {
       "path": "README.md",
-      "blob": "9e3f49fdcc59849d0201b06a4fe2ba45fcde4303",
-      "bytes": 11497,
+      "blob": "4fd01ba375cd45959deb590f49643ba147506efd",
+      "bytes": 11616,
       "role": "documentation"
     },
     {
@@ -68,6 +74,12 @@
       "path": "docs/AGENT_OPERATING_SYSTEM.md",
       "blob": "a156e0951e04035a2154faf55bf18979f54447e7",
       "bytes": 10413,
+      "role": "agent_tooling"
+    },
+    {
+      "path": "docs/REPOSITORY_INVENTORY.md",
+      "blob": "9b411b0f0f7cc5ce0f11881b2654570b6c831a0c",
+      "bytes": 3444,
       "role": "agent_tooling"
     },
     {
