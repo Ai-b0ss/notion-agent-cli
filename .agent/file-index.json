@@ -6,8 +6,8 @@
   "files": [
     {
       "path": ".agent/branch-index.json",
-      "blob": "0a735bf6c7921e657aca19e38667523dfb9be7df",
-      "bytes": 421,
+      "blob": "c5766db46e2dd015900504604ed28c7ad5885b6a",
+      "bytes": 646,
       "role": "agent_tooling"
     },
     {
@@ -30,8 +30,8 @@
     },
     {
       "path": "README.md",
-      "blob": "f0f09461e2c86bd85b35e705d78faa94d744c7e8",
-      "bytes": 10993,
+      "blob": "f7249089afe49867a6c09ecb44eb8c20c5c17443",
+      "bytes": 11424,
       "role": "documentation"
     },
     {
