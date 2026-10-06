@@ -1,0 +1,446 @@
+{
+  "schema": "account-idea-lineages-v1",
+  "snapshot_date": "2026-10-06",
+  "warning": "Navigation snapshot only. Resolve current GitHub object state and exact refs when freshness matters.",
+  "mandatory_rules": [
+    "Orient by lineage before assuming repository boundaries.",
+    "Use each PR's real base/head; never estimate scope from head-vs-current-main alone.",
+    "Separate implementation state, proof state, merge state and deployment state.",
+    "Prefer current GitHub object metadata over stale status prose inside PR bodies.",
+    "Do not conclude absence until aliases, predecessor names, related repositories, PRs/issues/workflows/tags and external runtime surfaces have been searched."
+  ],
+  "lineages": [
+    {
+      "id": "human-dialogue-platform",
+      "aliases": [
+        "Human 1.5",
+        "Human 2.0",
+        "HumanBench"
+      ],
+      "repositories": [
+        "Ai-b0ss/human-1.5"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/human-1.5",
+          "pr": 1,
+          "role": "Human 2.0 benchmark-first foundation",
+          "recorded_state": "open/draft/unmerged"
+        }
+      ],
+      "guards": [
+        "Legacy FAI/IGS is not automatically the intended Human 2.0 architecture.",
+        "Unmerged does not mean abandoned."
+      ]
+    },
+    {
+      "id": "ai-mirrors-runtime",
+      "aliases": [
+        "AI MIRRORS",
+        "GPT Mirror",
+        "QH1.4"
+      ],
+      "repositories": [
+        "Japan-Live/ai_mirrors",
+        "Ai-b0ss/ai-mirrors",
+        "Hugging Face runtime"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/ai-mirrors",
+          "pr": 3,
+          "role": "GitHub/HF reconciliation dossier",
+          "recorded_state": "open/draft/unmerged"
+        }
+      ],
+      "guards": [
+        "GitHub and HF were structurally related but not byte-identical.",
+        "Reconcile exact runtime/deployment files before copying between surfaces."
+      ]
+    },
+    {
+      "id": "free-fabric-core",
+      "aliases": [
+        "FREE FABRIC",
+        "Fabric",
+        "fabric-core"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-workspace",
+        "Ai-b0ss/qwen-free-api",
+        "Ai-b0ss/notion-agent-bridge",
+        "Ai-b0ss/free-fabric-ci"
+      ],
+      "epochs": [
+        {
+          "name": "task-lease-fence-kernel",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#36"
+          ]
+        },
+        {
+          "name": "canonical-v1",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#61",
+            "Ai-b0ss/qwen-free-api#107"
+          ]
+        },
+        {
+          "name": "provider-generic-core",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#91",
+            "Ai-b0ss/qwen-workspace#116"
+          ]
+        },
+        {
+          "name": "distributed-pc-independent",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#121",
+            "Ai-b0ss/qwen-workspace#124"
+          ]
+        },
+        {
+          "name": "exact-head-external-acceptance",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#129",
+            "Ai-b0ss/free-fabric-ci"
+          ]
+        }
+      ],
+      "guards": [
+        "Infrastructure proof completion is not whole-product completion.",
+        "Provider repos and public proof carriers are surfaces, not the whole Fabric."
+      ]
+    },
+    {
+      "id": "gpt-web-agent-execution",
+      "aliases": [
+        "GPT web",
+        "ChatGPT web bridge",
+        "Agent Execution"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-workspace"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "prs": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "role": "diagnostic chain"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "pr": 86,
+          "role": "bounded ChatGPT web adapter",
+          "recorded_state": "open/draft/unmerged"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "prs": [
+            87,
+            88
+          ],
+          "role": "webhook/canary continuation"
+        }
+      ],
+      "guards": [
+        "Diagnostic lineage is not random CI noise.",
+        "Adapter existence is not a production-readiness claim."
+      ]
+    },
+    {
+      "id": "qwen-standalone",
+      "aliases": [
+        "Qwen standalone",
+        "OpenCode continuation",
+        "qwen-free-api"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-workspace",
+        "Ai-b0ss/qwen-free-api"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "pr": 130,
+          "role": "standalone closure proof",
+          "recorded_state": "open/unmerged/do-not-merge"
+        }
+      ],
+      "guards": [
+        "Expired/partial auth pool is not proof of either product success or product failure.",
+        "Do not merge #130 without curator evaluation."
+      ]
+    },
+    {
+      "id": "notion-ncm-protocol",
+      "aliases": [
+        "NCM28",
+        "Notion agent",
+        "notion-agent-cli"
+      ],
+      "repositories": [
+        "Ai-b0ss/notion-agent-bridge",
+        "Ai-b0ss/notion-agent-cli"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/notion-agent-bridge",
+          "prs": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "role": "NCM28 exact-source/native provenance"
+        },
+        {
+          "repo": "Ai-b0ss/notion-agent-bridge",
+          "prs": [
+            88,
+            131
+          ],
+          "role": "integration/consolidation"
+        },
+        {
+          "repo": "Ai-b0ss/notion-agent-cli",
+          "pr": 1,
+          "role": "0.1.13 protocol reconciliation",
+          "recorded_state": "merged"
+        }
+      ],
+      "guards": [
+        "Historical NCM28 provenance gates do not prove a modern Windows candidate by themselves."
+      ]
+    },
+    {
+      "id": "windows-agent-control",
+      "aliases": [
+        "NCM28",
+        "FF-WIN",
+        "Bridge v3",
+        "CUA",
+        "RFGI",
+        "GitHub Windows transport v5",
+        "FFBridge",
+        "Seven Pillars",
+        "Commander"
+      ],
+      "repositories": [
+        "Ai-b0ss/notion-agent-bridge",
+        "Ai-b0ss/notion-agent-cli",
+        "Ai-b0ss/qwen-free-api"
+      ],
+      "epochs": [
+        {
+          "name": "ncm28",
+          "date_range": "2026-08-16..2026-08-18",
+          "objects": [
+            "notion-agent-bridge#1",
+            "notion-agent-bridge#7"
+          ]
+        },
+        {
+          "name": "ff-windows-desktop",
+          "date_range": "2026-09-01",
+          "objects": [
+            "notion-agent-bridge#86"
+          ]
+        },
+        {
+          "name": "bridge-v3",
+          "date_range": "2026-09-10",
+          "objects": [
+            "notion-agent-bridge#461",
+            "notion-agent-bridge#395"
+          ]
+        },
+        {
+          "name": "cua",
+          "date_range": "2026-09-13..2026-09-18",
+          "objects": [
+            "notion-agent-bridge#737",
+            "notion-agent-bridge#740",
+            "notion-agent-bridge#741",
+            "notion-agent-bridge#749",
+            "notion-agent-bridge#755"
+          ]
+        },
+        {
+          "name": "canonical-bridge-rc",
+          "date_range": "2026-09-22",
+          "objects": [
+            "notion-agent-bridge#1909"
+          ]
+        },
+        {
+          "name": "rfgi",
+          "date_range": "2026-09-27",
+          "objects": [
+            "notion-agent-bridge#3239",
+            "notion-agent-bridge#3298",
+            "notion-agent-bridge#3366",
+            "notion-agent-bridge#3393",
+            "notion-agent-bridge#3395"
+          ]
+        },
+        {
+          "name": "github-windows-v5",
+          "date_range": "2026-09-30",
+          "objects": [
+            "notion-agent-bridge#3815"
+          ]
+        },
+        {
+          "name": "ffbridge",
+          "date_range": "2026-10-01..2026-10-02",
+          "objects": [
+            "notion-agent-bridge#3823",
+            "notion-agent-bridge#3831"
+          ]
+        },
+        {
+          "name": "seven-pillars",
+          "date_range": "2026-10-03..2026-10-05",
+          "objects": [
+            "notion-agent-bridge#3833",
+            "notion-agent-bridge#3834",
+            "workflow-run:37384262241"
+          ]
+        }
+      ],
+      "sublineage_search_terms": [
+        "Commander",
+        "Antigravity",
+        "FlClash",
+        "OmniRouter",
+        "WGC",
+        "UIA",
+        "Excel",
+        "Word",
+        "PowerPoint",
+        "hidden app",
+        "physical input"
+      ],
+      "proof_notes": [
+        "Run 37384262241 on exact candidate 4444e96fb2ead032083f144de0aa7e93c21b5171: 501 tests, 0 failures/errors/skips, 41.284 s.",
+        "Two owner-desktop tests were excluded; this is isolated Windows evidence, not complete live owner-desktop proof.",
+        "Lossless artifact archive: .agent/evidence-index/archive/pr-3834-run-37384262241/ff-seven-pillars-contracts.zip.b64; decoded ZIP sha256 2d7cc981f08e7578c31ebe9eacdbedc52b246f7acecf5c2272f5743103ad132d."
+      ],
+      "guards": [
+        "Name the epoch when making a claim.",
+        "Do not add overlapping test counts.",
+        "Current PR metadata overrides stale body status text."
+      ]
+    },
+    {
+      "id": "autopilot-control-plane",
+      "aliases": [
+        "AUTOPILOT",
+        "scheduler state",
+        "CAS control plane"
+      ],
+      "repositories": [
+        "Ai-b0ss/kontur",
+        "Ai-b0ss/free-fabric-ci",
+        "Ai-b0ss/qwen-workspace"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/kontur",
+          "pr": 32,
+          "recorded_state": "open/draft/unmerged"
+        },
+        {
+          "repo": "Ai-b0ss/free-fabric-ci",
+          "pr": 2,
+          "recorded_state": "open/draft/unmerged"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "pr": 124,
+          "role": "canon explicitly separates general Fabric from Kontur meta-runtime"
+        }
+      ],
+      "guards": [
+        "Conceptual pairing is not byte identity or merge equivalence."
+      ]
+    },
+    {
+      "id": "kontur-product",
+      "aliases": [
+        "Kontur",
+        "V1-V5",
+        "master frame",
+        "flash continuity"
+      ],
+      "repositories": [
+        "Ai-b0ss/kontur"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/kontur",
+          "pr": 11,
+          "role": "current-vs-legacy boundary"
+        },
+        {
+          "repo": "Ai-b0ss/kontur",
+          "prs": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "role": "visual/state/proof evolution"
+        },
+        {
+          "repo": "Ai-b0ss/kontur",
+          "pr": 32,
+          "role": "AUTOPILOT cross-link"
+        }
+      ],
+      "guards": [
+        "Product/UI lineage and scheduler/control-plane lineage have different authority."
+      ]
+    },
+    {
+      "id": "chatgpt-conversation-recovery",
+      "aliases": [
+        "429 recovery",
+        "conversation availability guard",
+        "stream recovery"
+      ],
+      "repositories": [
+        "Ai-b0ss/chatgpt-429-conversation-recovery"
+      ],
+      "milestones": [
+        "v0.8.0",
+        "v0.8.1",
+        "v0.8.2",
+        "v0.8.3",
+        "v0.8.4",
+        "v0.9.3"
+      ],
+      "guards": [
+        "Similar ChatGPT/browser work elsewhere is not code lineage without direct evidence.",
+        "Preserve idempotency/privacy/rate-limit boundaries."
+      ]
+    }
+  ]
+}
