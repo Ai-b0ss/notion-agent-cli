@@ -162,7 +162,13 @@
       "aliases": [
         "Qwen standalone",
         "OpenCode continuation",
-        "qwen-free-api"
+        "qwen-free-api",
+        "QWEN_CORE",
+        "QWEN_RELIABILITY",
+        "runtime preflight",
+        "Windows standalone",
+        "QWEN_START",
+        "OpenCode witness"
       ],
       "repositories": [
         "Ai-b0ss/qwen-workspace",
@@ -170,15 +176,127 @@
       ],
       "key_objects": [
         {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "pr": 6,
+          "role": "encrypted runtime-state provider-free preflight",
+          "recorded_state": "open/draft/evidence"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "prs": [
+            51,
+            60,
+            69,
+            78,
+            84
+          ],
+          "role": "representative exact-head Core/Reliability convergence carriers"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "prs": [
+            92,
+            98
+          ],
+          "role": "bounded live acceptance carriers"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "pr": 99,
+          "role": "merged duplicate-successful-tool-replay safety fix",
+          "recorded_state": "merged"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "prs": [
+            104,
+            105,
+            110,
+            111,
+            112,
+            116,
+            119,
+            120,
+            121
+          ],
+          "role": "OpenCode execution-witness / continuation / harness-localization chain"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "pr": 123,
+          "role": "merged provider-free portable Windows release and exact artifact proof",
+          "recorded_state": "merged"
+        },
+        {
           "repo": "Ai-b0ss/qwen-workspace",
           "pr": 130,
-          "role": "standalone closure proof",
+          "role": "late standalone closure/auth dossier",
           "recorded_state": "open/unmerged/do-not-merge"
         }
       ],
       "guards": [
+        "Provider-free runtime/packaging proof is not live authenticated Qwen capability.",
+        "A CI/harness carrier failure must be localized before attributing it to product or model behavior.",
+        "Merged PR #99 is a duplicate-replay safety fix, not proof that multi-round tools are healthy.",
         "Expired/partial auth pool is not proof of either product success or product failure.",
-        "Do not merge #130 without curator evaluation."
+        "Do not merge qwen-workspace #130 without curator evaluation."
+      ],
+      "epochs": [
+        {
+          "name": "encrypted-runtime-preflight",
+          "objects": [
+            "Ai-b0ss/qwen-free-api#6"
+          ]
+        },
+        {
+          "name": "exact-head-reliability-convergence",
+          "objects": [
+            "Ai-b0ss/qwen-free-api#51",
+            "Ai-b0ss/qwen-free-api#60",
+            "Ai-b0ss/qwen-free-api#69",
+            "Ai-b0ss/qwen-free-api#78",
+            "Ai-b0ss/qwen-free-api#84"
+          ]
+        },
+        {
+          "name": "bounded-live-acceptance",
+          "objects": [
+            "Ai-b0ss/qwen-free-api#92",
+            "Ai-b0ss/qwen-free-api#98"
+          ]
+        },
+        {
+          "name": "duplicate-tool-replay-safety",
+          "objects": [
+            "Ai-b0ss/qwen-free-api#99"
+          ]
+        },
+        {
+          "name": "opencode-execution-witness-harness",
+          "objects": [
+            "Ai-b0ss/qwen-free-api#104-105",
+            "Ai-b0ss/qwen-free-api#110-112",
+            "Ai-b0ss/qwen-free-api#116",
+            "Ai-b0ss/qwen-free-api#119-121"
+          ]
+        },
+        {
+          "name": "portable-windows-standalone",
+          "objects": [
+            "Ai-b0ss/qwen-free-api#123"
+          ],
+          "evidence": {
+            "workflow_run": 33501804212,
+            "artifact_id": 9798030182,
+            "artifact_digest": "sha256:1c191c08e799e3786e6dba68724236dfb3827f3aaaffd03ffcae8bc628cdafea"
+          }
+        },
+        {
+          "name": "standalone-closure-dossier",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#130"
+          ]
+        }
       ]
     },
     {
@@ -869,11 +987,34 @@
       ],
       "clusters": [
         {
-          "name": "qwen-exact-gating-lab",
+          "name": "qwen-exact-gating-convergence",
           "objects": [
-            "qwen-free-api#29-85"
+            "qwen-free-api#29-94"
           ],
-          "note": "successive exact-head Linux/Windows/reliability/localization evidence"
+          "note": "serial exact-head Core/Reliability/Linux/Windows/localization carriers around frozen product revisions"
+        },
+        {
+          "name": "qwen-bounded-live-acceptance",
+          "objects": [
+            "qwen-free-api#92",
+            "qwen-free-api#98"
+          ],
+          "note": "live-provider acceptance on exact selected revisions"
+        },
+        {
+          "name": "qwen-opencode-witness-continuation",
+          "objects": [
+            "qwen-free-api#100-112"
+          ],
+          "note": "dynamic-stage/OpenCode witness/least-tool/continuation proof apparatus"
+        },
+        {
+          "name": "qwen-delivery-inner-harness",
+          "objects": [
+            "qwen-free-api#116",
+            "qwen-free-api#119-121"
+          ],
+          "note": "delivery/build_rc/stage_validation/inner-HARNESS localization; diagnose carrier stage before blaming product"
         },
         {
           "name": "kontur-browser-qa-carrier",
@@ -984,7 +1125,8 @@
         "provider-free execution surface"
       ],
       "repositories": [
-        "Ai-b0ss/qwen-workspace"
+        "Ai-b0ss/qwen-workspace",
+        "Ai-b0ss/qwen-free-api"
       ],
       "key_objects": [
         {
@@ -1009,11 +1151,18 @@
             99
           ],
           "role": "adjacent Circle/GitHub Windows transport work"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-free-api",
+          "pr": 122,
+          "role": "one-live Q15 witness on exact 3b27 release carrier",
+          "recorded_state": "open/draft/do-not-merge"
         }
       ],
       "guards": [
         "Q15 execution proof is not equivalent to Qwen model-runtime capability.",
-        "Do not automatically promote it to canonical Free Fabric transport."
+        "Provider-free proof and one-live witness are different evidence classes.",
+        "Do not automatically promote Q15 to canonical Free Fabric transport."
       ]
     },
     {
@@ -1206,6 +1355,37 @@
         "fast-network-rescue"
       ],
       "note": "Deeper pass recovered shared pre-Free-Fabric remote-agent infrastructure and machine-readable Windows sublineages that were previously only implicit in PR/Issue chronology."
+    },
+    "qwen_runtime_proof_ladder_20261006": {
+      "repository": "Ai-b0ss/qwen-free-api",
+      "representative_prs": [
+        6,
+        51,
+        60,
+        69,
+        78,
+        84,
+        92,
+        98,
+        99,
+        104,
+        105,
+        110,
+        111,
+        112,
+        116,
+        119,
+        120,
+        121,
+        122,
+        123,
+        134
+      ],
+      "merged_product_anchors": [
+        99,
+        123
+      ],
+      "warning": "Most ci/* objects are evidence carriers. Separate provider-free runtime proof, live capability, merged product changes and harness/delivery diagnostics."
     }
   }
 }
