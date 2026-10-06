@@ -1,0 +1,18 @@
+{
+  "schema": "agent-branch-index-v1",
+  "repository": "Ai-b0ss/notion-agent-cli",
+  "canonical_branch": "main",
+  "branch_count": 2,
+  "branches": [
+    {
+      "name": "main",
+      "head": "d623a1978bca1da0b758570440a0259574df3da1",
+      "family": "main"
+    },
+    {
+      "name": "reconcile/notion-agent-cli-0.1.13",
+      "head": "b7483cf40981636a8affcfeb0239802064faa195",
+      "family": "reconcile"
+    }
+  ]
+}
