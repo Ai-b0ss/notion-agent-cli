@@ -271,7 +271,20 @@
         "GitHub Windows transport v5",
         "FFBridge",
         "Seven Pillars",
-        "Commander"
+        "Commander",
+        "Prelogin",
+        "Session 0",
+        "Antigravity",
+        "FlClash",
+        "OmniRouter",
+        "WGC",
+        "UIA",
+        "Office",
+        "Excel",
+        "AppContainer",
+        "hidden apps",
+        "durable outcomes",
+        "Fast Transport"
       ],
       "repositories": [
         "Ai-b0ss/notion-agent-bridge",
@@ -384,7 +397,364 @@
         "human": "docs/ISSUE_ARCHAEOLOGY.md",
         "machine": ".agent/issue-theme-epochs.json",
         "reason": "Thousands of Issues are executable task envelopes/transport records and contain experiment evidence not recoverable from PRs alone."
-      }
+      },
+      "facets": [
+        {
+          "id": "commander-prelogin-rescue",
+          "aliases": [
+            "Commander",
+            "Prelogin",
+            "Session 0",
+            "prelogin rescue"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 1607,
+              "role": "Commander cloud-health keeper recovery"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 1640,
+              "role": "Commander becomes primary direct control plane"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 1642,
+              "role": "Session 0 prelogin rescue control plane"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 1660,
+              "role": "BOM-safe normalized prelogin event fix"
+            }
+          ],
+          "issue_anchors": [
+            1633,
+            1641,
+            1646,
+            1647,
+            1659,
+            1661,
+            1813,
+            1814,
+            2125,
+            2149,
+            2401,
+            3151
+          ],
+          "guard": "Prelogin/SYSTEM rescue and interactive Commander control are related recovery planes, not interchangeable execution modes."
+        },
+        {
+          "id": "antigravity-cdp",
+          "aliases": [
+            "Antigravity",
+            "DevToolsActivePort",
+            "Electron CDP"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 744,
+              "role": "CUA stale DevToolsActivePort fail-closed work"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3239,
+              "role": "app-owned listener CDP discovery"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3298,
+              "role": "cold-start CDP candidate"
+            }
+          ],
+          "issue_anchors": [
+            248,
+            249,
+            251,
+            252,
+            253,
+            388,
+            389,
+            3493,
+            3494,
+            3495,
+            3496,
+            3534
+          ]
+        },
+        {
+          "id": "flclash-control",
+          "aliases": [
+            "FlClash",
+            "FlClashX",
+            "Guardian"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3366,
+              "role": "authenticated loopback controller candidate"
+            }
+          ],
+          "issue_anchors": [
+            524,
+            548,
+            551,
+            558,
+            567,
+            577,
+            763,
+            3326,
+            3327,
+            3353,
+            3359,
+            3363,
+            3365
+          ],
+          "guard": "Early GUI/OCR/Guardian evidence and later authenticated API evidence are different capability classes."
+        },
+        {
+          "id": "omnirouter-transfer",
+          "aliases": [
+            "OmniRouter"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 395,
+              "role": "isolated off-host preparation"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 461,
+              "role": "Bridge v3 correction explicitly preserving OmniRouter"
+            }
+          ],
+          "issue_anchors": [
+            180,
+            181,
+            182,
+            183,
+            184,
+            226,
+            227,
+            238,
+            433,
+            477,
+            634,
+            635,
+            636,
+            637,
+            639
+          ]
+        },
+        {
+          "id": "office-structured-automation",
+          "aliases": [
+            "Excel",
+            "Office",
+            "Word",
+            "PowerPoint",
+            "COM",
+            "ROT"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 966,
+              "role": "structured Excel COM route hardening"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3220,
+              "role": "multi-instance Excel ROT discovery"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3834,
+              "role": "broader Seven Pillars Office/assistant candidate"
+            }
+          ],
+          "issue_anchors": [
+            962,
+            963,
+            3219,
+            3221,
+            3222,
+            3223,
+            3224
+          ]
+        },
+        {
+          "id": "capture-vision-wgc",
+          "aliases": [
+            "WGC",
+            "vision",
+            "capture",
+            "visual grounding"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 741,
+              "role": "capture/visual-entity fail-closed contract"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 749,
+              "role": "supervised WGC/browser/Open-dialog proof"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 751,
+              "role": "persistent frame pool resize correction"
+            }
+          ],
+          "issue_anchors": [
+            1206,
+            1207,
+            1252,
+            1253,
+            1254,
+            1255,
+            1256,
+            1258,
+            1259,
+            1260,
+            1261,
+            1262,
+            1263,
+            1265,
+            3407,
+            3408,
+            3417,
+            3418,
+            3431
+          ],
+          "guard": "Fresh capture does not imply general visual understanding."
+        },
+        {
+          "id": "ffbridge-isolation-durable",
+          "aliases": [
+            "durable outcomes",
+            "isolated browser",
+            "AppContainer",
+            "hidden apps",
+            "restricted execution",
+            "browser-to-document"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3823,
+              "role": "durable outcomes/background execution"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3824,
+              "role": "tool preparation recovery"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3825,
+              "role": "isolated browser profiles"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3826,
+              "role": "tool corruption/browser-profile recovery"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3827,
+              "role": "verified AppContainer Python"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3828,
+              "role": "hidden WordPad/Paint"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3829,
+              "role": "trusted-shell vs restricted-network boundary"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3830,
+              "role": "CORE acceptance v3"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3831,
+              "role": "integration into main"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3832,
+              "role": "browser-to-document + response-loss recovery"
+            }
+          ],
+          "guard": "A stacked closed-unmerged PR can still be integrated by a later release PR; inspect ancestry before calling it discarded."
+        },
+        {
+          "id": "fast-network-rescue",
+          "aliases": [
+            "FF-FAST",
+            "Fast Transport",
+            "network guardian",
+            "network supervisor"
+          ],
+          "key_objects": [
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 1984,
+              "role": "restore canonical V3 Fast Transport path"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3393,
+              "role": "Fast recovery health acceptance"
+            },
+            {
+              "repo": "Ai-b0ss/notion-agent-bridge",
+              "pr": 3395,
+              "role": "canonical scheduled-task Fast recovery"
+            }
+          ],
+          "issue_anchors": [
+            675,
+            674,
+            677,
+            676,
+            682,
+            686,
+            1472,
+            1492,
+            1622,
+            1625,
+            1628,
+            1653,
+            1655,
+            1780,
+            1781,
+            1782,
+            1784,
+            1785,
+            1788,
+            1790,
+            1796,
+            1797,
+            1798,
+            1809,
+            1869,
+            2538,
+            3781
+          ]
+        }
+      ]
     },
     {
       "id": "autopilot-control-plane",
@@ -695,6 +1065,115 @@
         "Transport repository does not imply product ownership.",
         "Issue-task execution evidence must be bound to its own source/state provenance."
       ]
+    },
+    {
+      "id": "remote-agent-foundation",
+      "aliases": [
+        "remote agent foundation",
+        "phone-first",
+        "remote task contract",
+        "autonomous remote fix loop"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-workspace",
+        "Ai-b0ss/qwen-free-api",
+        "Ai-b0ss/kontur",
+        "Ai-b0ss/notion-agent-bridge"
+      ],
+      "epochs": [
+        {
+          "name": "safe-remote-ci",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#1",
+            "Ai-b0ss/qwen-free-api#1",
+            "Ai-b0ss/kontur#1"
+          ]
+        },
+        {
+          "name": "remote-task-pr-contract",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#2",
+            "Ai-b0ss/qwen-free-api#2",
+            "Ai-b0ss/kontur#2",
+            "Ai-b0ss/notion-agent-bridge#5"
+          ]
+        },
+        {
+          "name": "autonomous-repair-loop-smoke",
+          "objects": [
+            "Ai-b0ss/kontur#3"
+          ]
+        }
+      ],
+      "guards": [
+        "This is shared remote-development infrastructure, not product ownership.",
+        "Do not retroactively equate it with later Free Fabric orchestration semantics."
+      ]
+    },
+    {
+      "id": "free-fabric-provider-incubator",
+      "aliases": [
+        "Provider Incubator",
+        "promo workers",
+        "provider worker factory",
+        "CodeBuddy",
+        "Hy4",
+        "Novita sandbox"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-workspace"
+      ],
+      "parent_lineage": "free-fabric-core",
+      "epochs": [
+        {
+          "name": "provider-lead-incubation",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#100"
+          ]
+        },
+        {
+          "name": "opencode-tool-gates",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#105",
+            "Ai-b0ss/qwen-workspace#106"
+          ]
+        },
+        {
+          "name": "codebuddy-hy4",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#107",
+            "Ai-b0ss/qwen-workspace#108"
+          ]
+        },
+        {
+          "name": "isolated-worker-factory",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#109",
+            "Ai-b0ss/qwen-workspace#111",
+            "Ai-b0ss/qwen-workspace#112"
+          ]
+        },
+        {
+          "name": "novita-compute-substrate",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#113",
+            "Ai-b0ss/qwen-workspace#114",
+            "Ai-b0ss/qwen-workspace#115"
+          ]
+        },
+        {
+          "name": "system-finish-integration",
+          "objects": [
+            "Ai-b0ss/qwen-workspace#118",
+            "Ai-b0ss/qwen-workspace#124"
+          ]
+        }
+      ],
+      "guards": [
+        "Provider-free contract tests are not live provider proof.",
+        "A discovered promo/API is not routable until its exact credentialed smoke gates pass.",
+        "This is a Free Fabric sublineage, not a separate product."
+      ]
     }
   ],
   "discovery_notes": {
@@ -710,6 +1189,23 @@
       "artifact": "docs/ISSUE_ARCHAEOLOGY.md",
       "machine_artifact": ".agent/issue-theme-epochs.json",
       "new_lineage": "astra-audit-state-transport"
+    },
+    "deep_pass_20261006": {
+      "recovered_lineages": [
+        "remote-agent-foundation",
+        "free-fabric-provider-incubator"
+      ],
+      "windows_facets": [
+        "commander-prelogin-rescue",
+        "antigravity-cdp",
+        "flclash-control",
+        "omnirouter-transfer",
+        "office-structured-automation",
+        "capture-vision-wgc",
+        "ffbridge-isolation-durable",
+        "fast-network-rescue"
+      ],
+      "note": "Deeper pass recovered shared pre-Free-Fabric remote-agent infrastructure and machine-readable Windows sublineages that were previously only implicit in PR/Issue chronology."
     }
   }
 }
