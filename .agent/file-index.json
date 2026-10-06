@@ -1,14 +1,26 @@
 {
-  "schema": "agent-file-index-v1",
+  "schema": "agent-file-index-v2",
   "repository": "Ai-b0ss/notion-agent-cli",
   "branch": "main",
-  "note": "Small Python package: trace CLI -> provider/transcript/account/thread modules -> tests. Run tools/build_agent_index.py for branch-local symbol lines.",
+  "self_indexing": "`.agent/file-index.json` is intentionally omitted to avoid recursive self-staleness.",
   "files": [
+    {
+      "path": ".agent/branch-index.json",
+      "blob": "0a735bf6c7921e657aca19e38667523dfb9be7df",
+      "bytes": 421,
+      "role": "agent_tooling"
+    },
     {
       "path": ".gitignore",
       "blob": "c42237e91e18fed121dfbfe39ac74eeab48c7721",
       "bytes": 280,
       "role": "project_file"
+    },
+    {
+      "path": "AGENTS.md",
+      "blob": "77cfc7628f69390c6ed9d41288c7a99a924afb83",
+      "bytes": 920,
+      "role": "documentation"
     },
     {
       "path": "LICENSE",
@@ -20,6 +32,12 @@
       "path": "README.md",
       "blob": "f0f09461e2c86bd85b35e705d78faa94d744c7e8",
       "bytes": 10993,
+      "role": "documentation"
+    },
+    {
+      "path": "docs/AGENT_NAVIGATION.md",
+      "blob": "b0797d8495ee0fc2e9f3189481e9d35dd8b6fc13",
+      "bytes": 1471,
       "role": "documentation"
     },
     {
@@ -156,8 +174,8 @@
     },
     {
       "path": "tools/build_agent_index.py",
-      "blob": "6e97262afe88d48dd498ec6be3cdaf8d748259ff",
-      "bytes": 3455,
+      "blob": "9ad5e056e09909d4eeb0735e479d8cff7cd8a446",
+      "bytes": 4539,
       "role": "agent_tooling"
     }
   ]
