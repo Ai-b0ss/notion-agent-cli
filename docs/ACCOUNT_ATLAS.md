@@ -6,6 +6,8 @@
 
 Snapshot: 2026-10-06. Resolve live state before freshness-sensitive decisions.
 
+**System-first companion:** read `docs/IDEA_LINEAGES.md` and `.agent/idea-lineages.json` when the task names an idea/system. They track one system across repository moves, PR stacks, workflow epochs and proof carriers; this atlas remains the account/repository topology layer.
+
 ## Account surfaces
 
 ### Owned working repositories
