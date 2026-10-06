@@ -177,6 +177,8 @@ This is the densest lineage and must be navigated by epoch.
 
 Sublineages worth searching independently: `Commander`, `Antigravity`, `FlClash`, `OmniRouter`, `WGC`, `UIA`, `Office/Excel/Word/PowerPoint`, `hidden apps`, `physical input`.
 
+Issue-ledger companion for this lineage: `docs/ISSUE_ARCHAEOLOGY.md` and `.agent/issue-theme-epochs.json`. Use it because many executed experiments exist only or primarily as transport/task Issues.
+
 Guard: never call the whole lineage “NCM28”, “Bridge v3”, “CUA” or “Seven Pillars” without identifying the epoch. Never add test counts from overlapping runs.
 
 ---
@@ -296,6 +298,26 @@ Open `qwen-workspace` evidence preserves a distinct late-August execution-surfac
 - Nearby PR #97 adds a Windows Circle read broker; PR #99 then explores authenticated GitHub self-hosted transport in the broader Free Fabric line.
 
 Guard: Q15 is an execution/proof sublineage, not equivalent to Qwen model-runtime capability and not automatically the canonical Free Fabric transport.
+
+
+---
+
+## L15 — Astra audit/adjudication state and evidence transport
+
+**Lineage ID:** `astra-audit-state-transport`
+
+This lineage is largely invisible in PR-only archaeology and was recovered from the `notion-agent-bridge` issue ledger.
+
+Observed sampled epoch: **7–8 September 2026**.
+
+- Issues #132–#136: audit bridge health, checkpoints, evidence locators and R01/u51 source/context inspection.
+- #210–#211: evidence export and shard transfer.
+- #217: cleanup of public transport runner residue.
+- #229–#230: durable state inventory and staged state-package transport.
+
+Guard: do not infer that Astra belongs to the Windows Bridge product merely because its transport ran through that repository. The issue ledger is acting as an execution/evidence carrier.
+
+Primary archaeology: `notion-agent-bridge/docs/ISSUE_ARCHAEOLOGY.md`.
 
 
 ## Cross-lineage rules
