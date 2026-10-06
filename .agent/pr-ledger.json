@@ -1,0 +1,41 @@
+{
+  "schema": "github-pr-ledger-v1",
+  "snapshot_date": "2026-10-06",
+  "repository": "Ai-b0ss/notion-agent-cli",
+  "visibility_context": "private-account-history",
+  "completeness": {
+    "method": "GitHub PR search split by current open/closed state; each partition below 100-result cap",
+    "open_returned": 0,
+    "closed_returned": 1,
+    "total": 1,
+    "expected_from_account_index": 1,
+    "complete": true,
+    "note": "Navigational snapshot; re-fetch live PR before freshness-sensitive action. purpose_hint is only the first body paragraph."
+  },
+  "interpretation_rules": [
+    "Use real base/base_sha before scope comparisons.",
+    "closed-unmerged is not automatically abandoned.",
+    "Exact head_sha binds historical evidence."
+  ],
+  "prs": [
+    {
+      "number": 1,
+      "title": "Reconcile notion-agent-cli 0.1.13 durable recovery and protocol stabilization",
+      "state": "closed",
+      "merged": true,
+      "draft": false,
+      "base": "main",
+      "base_sha": "515690627f931ecb970a4618b2d059fcab482474",
+      "head": "reconcile/notion-agent-cli-0.1.13",
+      "head_sha": "b7483cf40981636a8affcfeb0239802064faa195",
+      "merge_commit_sha": null,
+      "created_at": "2026-09-06T23:09:02Z",
+      "updated_at": "2026-09-07T05:28:33Z",
+      "closed_at": "2026-09-07T05:28:33Z",
+      "merged_at": "2026-09-07T05:28:33Z",
+      "commits": 1,
+      "purpose_hint": "### Summary of Changes",
+      "url": "https://github.com/Ai-b0ss/notion-agent-cli/pull/1"
+    }
+  ]
+}
