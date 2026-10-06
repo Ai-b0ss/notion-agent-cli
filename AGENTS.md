@@ -1,3 +1,18 @@
+<!-- ACCOUNT_WIDE_BOOTSTRAP_V1 -->
+## Account-wide orientation — mandatory
+
+Before every substantial repository task, also read:
+
+1. `docs/ACCOUNT_ATLAS.md` — private cross-repository topology, hidden work clusters and absence-test protocol.
+2. `.agent/account-index.json` — machine-readable account/repository graph snapshot.
+3. `.agent/github-objects-index.json` — this repository's PR/issue/workflow/tag archaeology.
+
+These are navigation snapshots, not live authority: re-resolve current GitHub state when freshness matters.
+
+Reading the atlas is mandatory; exhaustively searching every other repository is not. Expand account-wide archaeology when the task may overlap prior, abandoned, migrated, cross-repo or externally deployed work.
+
+---
+
 <!-- AGENT_BOOTSTRAP_V2 -->
 # READ THIS FIRST — mandatory repository bootstrap
 
