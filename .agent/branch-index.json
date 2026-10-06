@@ -6,13 +6,15 @@
   "branches": [
     {
       "name": "main",
-      "head": "d623a1978bca1da0b758570440a0259574df3da1",
-      "family": "main"
+      "head": null,
+      "family": "main",
+      "resolve_at_read_time": true
     },
     {
       "name": "reconcile/notion-agent-cli-0.1.13",
       "head": "b7483cf40981636a8affcfeb0239802064faa195",
       "family": "reconcile"
     }
-  ]
+  ],
+  "main_resolution": "The main branch is dynamic. Resolve its current commit at read time with `git rev-parse main` or the GitHub branch ref. Non-main SHAs are navigation snapshots; re-resolve any branch that may have moved."
 }
