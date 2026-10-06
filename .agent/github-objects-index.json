@@ -32,5 +32,12 @@
   "relation": {
     "repo": "Ai-b0ss/notion-agent-bridge",
     "kind": "shared Notion agent/protocol lineage; inspect bridge historical Notion/NCM PRs when protocol behavior is unclear"
+  },
+  "complete_pr_ledger": {
+    "path": ".agent/pr-ledger.json",
+    "snapshot_date": "2026-10-06",
+    "total": 1,
+    "scope": "all PR states: open, merged, closed-unmerged",
+    "rule": "Use this ledger for exhaustive PR archaeology and real base/head SHA lookup; fetch the live PR before freshness-sensitive action."
   }
 }
