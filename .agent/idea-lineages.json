@@ -223,6 +223,41 @@
       ],
       "guards": [
         "Historical NCM28 provenance gates do not prove a modern Windows candidate by themselves."
+      ],
+      "epochs": [
+        {
+          "name": "ncm28-exact-source-native",
+          "objects": [
+            "notion-agent-bridge#1-7"
+          ]
+        },
+        {
+          "name": "agent-prompt-matrix-materialization",
+          "objects": [
+            "notion-agent-bridge#8-32"
+          ]
+        },
+        {
+          "name": "promoted-v3-recovery",
+          "objects": [
+            "notion-agent-bridge#35-50"
+          ]
+        },
+        {
+          "name": "stage-b-delivery",
+          "objects": [
+            "notion-agent-bridge#51-77",
+            "qwen-free-api#118"
+          ]
+        },
+        {
+          "name": "integration-consolidation",
+          "objects": [
+            "notion-agent-bridge#88",
+            "notion-agent-bridge#131",
+            "notion-agent-cli#1"
+          ]
+        }
       ]
     },
     {
@@ -441,6 +476,177 @@
         "Similar ChatGPT/browser work elsewhere is not code lineage without direct evidence.",
         "Preserve idempotency/privacy/rate-limit boundaries."
       ]
+    },
+    {
+      "id": "proof-carrier-mesh",
+      "aliases": [
+        "CI carrier",
+        "proof carrier",
+        "cross-repo CI",
+        "qwen-free-api CI"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-free-api",
+        "Ai-b0ss/qwen-workspace",
+        "Ai-b0ss/notion-agent-bridge",
+        "Ai-b0ss/kontur"
+      ],
+      "clusters": [
+        {
+          "name": "qwen-exact-gating-lab",
+          "objects": [
+            "qwen-free-api#29-85"
+          ],
+          "note": "successive exact-head Linux/Windows/reliability/localization evidence"
+        },
+        {
+          "name": "kontur-browser-qa-carrier",
+          "objects": [
+            "qwen-free-api#13-15",
+            "qwen-free-api#27"
+          ]
+        },
+        {
+          "name": "notion-stage-b-carrier",
+          "objects": [
+            "qwen-free-api#118"
+          ]
+        },
+        {
+          "name": "provider-session-preflight-carrier",
+          "objects": [
+            "qwen-free-api#134"
+          ]
+        }
+      ],
+      "guards": [
+        "Classify a carrier PR by payload and target system, not by repository location.",
+        "CI/proof carrier does not imply product ownership.",
+        "Use the PR's real base; inherited divergence is not feature scope."
+      ]
+    },
+    {
+      "id": "notion-stage-b-delivery",
+      "aliases": [
+        "Stage-B",
+        "Notion Stage-B",
+        "promoted-v3",
+        "Agent matrix"
+      ],
+      "repositories": [
+        "Ai-b0ss/notion-agent-bridge",
+        "Ai-b0ss/qwen-free-api"
+      ],
+      "epochs": [
+        {
+          "name": "agent-prompt-matrix-materialization",
+          "objects": [
+            "notion-agent-bridge#8-32"
+          ]
+        },
+        {
+          "name": "promoted-v3-crash-recovery",
+          "objects": [
+            "notion-agent-bridge#35-50"
+          ]
+        },
+        {
+          "name": "native-windows-stage-b-delivery",
+          "objects": [
+            "notion-agent-bridge#51-77",
+            "qwen-free-api#118"
+          ]
+        }
+      ],
+      "guards": [
+        "Treat the PR chain as serial diagnosis/proof, not independent feature backlog.",
+        "A failed earlier carrier does not invalidate later corrected descendants."
+      ]
+    },
+    {
+      "id": "kontur-cloudflare-deployment",
+      "aliases": [
+        "Kontur staging",
+        "Cloudflare staging",
+        "D1 probe"
+      ],
+      "repositories": [
+        "Ai-b0ss/kontur"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/kontur",
+          "prs": [
+            6,
+            7,
+            8,
+            10
+          ],
+          "role": "staging promote/API/postcheck/integrated proof chain"
+        },
+        {
+          "repo": "Ai-b0ss/kontur",
+          "pr": 17,
+          "role": "canonical Linux build gate"
+        },
+        {
+          "repo": "Ai-b0ss/kontur",
+          "pr": 18,
+          "role": "production D1 read-only capability probe"
+        }
+      ],
+      "guards": [
+        "Deployment/staging evidence is not product-design authority.",
+        "Read-only production capability does not authorize writes."
+      ]
+    },
+    {
+      "id": "q15-provider-free-execution",
+      "aliases": [
+        "Q15",
+        "secure SSH execution",
+        "provider-free execution surface"
+      ],
+      "repositories": [
+        "Ai-b0ss/qwen-workspace"
+      ],
+      "key_objects": [
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "pr": 92,
+          "role": "provider-free execution-surface proof"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "pr": 93,
+          "role": "secure SSH execution verification"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "pr": 98,
+          "role": "native Circle provider-free execution proof"
+        },
+        {
+          "repo": "Ai-b0ss/qwen-workspace",
+          "prs": [
+            97,
+            99
+          ],
+          "role": "adjacent Circle/GitHub Windows transport work"
+        }
+      ],
+      "guards": [
+        "Q15 execution proof is not equivalent to Qwen model-runtime capability.",
+        "Do not automatically promote it to canonical Free Fabric transport."
+      ]
     }
-  ]
+  ],
+  "discovery_notes": {
+    "source": "Full open-PR indexes in qwen-workspace, qwen-free-api, notion-agent-bridge and kontur were swept after the initial 10-lineage map.",
+    "finding": "The added lineages prevent CI carriers and serial diagnostic PR chains from being misclassified as independent product features.",
+    "qwen_free_api_open_pr_snapshot": {
+      "total": 90,
+      "ci_family": 81
+    }
+  }
 }
