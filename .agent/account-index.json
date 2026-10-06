@@ -1,0 +1,375 @@
+{
+  "schema": "github-account-atlas-v1",
+  "snapshot_date": "2026-10-06",
+  "account": "Ai-b0ss",
+  "warning": "Snapshot metadata is navigational, not live authority. Resolve current heads/PR states/issues at read time when decisions depend on freshness.",
+  "repositories": [
+    {
+      "full_name": "Ai-b0ss/human-1.5",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Human product: legacy 1.5 plus Human 2.0 foundation",
+      "branches": 2,
+      "files_main_snapshot": 121,
+      "prs": {
+        "total": 1,
+        "open": 1,
+        "merged": 0,
+        "closed_unmerged": 0
+      },
+      "issues": {
+        "total": 0,
+        "open": 0,
+        "closed": 0
+      },
+      "notable": [
+        "PR #1 Human 2.0 benchmark-first foundation is open/draft and intentionally unmerged"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/qwen-workspace",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Qwen/Pixel/Free Fabric umbrella workspace and orchestration/proof lab",
+      "branches": 120,
+      "files_main_snapshot": 761,
+      "prs": {
+        "total": 128,
+        "open": 33,
+        "merged": 39,
+        "closed_unmerged": 56
+      },
+      "issues": {
+        "total": 2,
+        "open": 2,
+        "closed": 0
+      },
+      "notable": [
+        "PR #130 standalone OpenCode continuation: +10/-35 vs current main, explicitly DO NOT MERGE",
+        "PR #99 self-hosted Windows transport line",
+        "PR #86 GPT web Agent Execution line",
+        "many open CI proof branches"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/qwen-free-api",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Qwen Chat proxy/runtime plus large proof and cross-repo CI history",
+      "branches": 275,
+      "files_main_snapshot": 101,
+      "prs": {
+        "total": 134,
+        "open": 90,
+        "merged": 19,
+        "closed_unmerged": 25
+      },
+      "issues": {
+        "total": 2,
+        "open": 0,
+        "closed": 2
+      },
+      "tags": [
+        "v1.0.1"
+      ],
+      "notable": [
+        "81 of 90 open PRs are ci/*",
+        "historical branches also carried Kontur QA and Notion Stage-B proof work",
+        "PR #95 appears huge vs main because its base is an old autopilot branch; the PR itself is a tiny express dependency fix"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/notion-agent-bridge",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Notion/NCM lineage evolved into Windows Agent Bridge / FFBridge / CUA runtime",
+      "branches": 230,
+      "files_main_snapshot": 761,
+      "prs": {
+        "total": 140,
+        "open": 78,
+        "merged": 32,
+        "closed_unmerged": 30
+      },
+      "issues": {
+        "total": 3698,
+        "open": 39,
+        "closed": 3659
+      },
+      "tags": [
+        "ff-github-transport-v5-20260930-rc1",
+        "ff-github-transport-v5-20260930-rc2",
+        "proven-consolidated-20260907",
+        "proven-release-20260907"
+      ],
+      "releases": [
+        "GitHub Windows transport v5 RC1",
+        "GitHub Windows transport v5 RC2"
+      ],
+      "notable": [
+        "Issues are an operational transport/evidence ledger, not a normal backlog",
+        "PR #3834 Seven Pillars/Office/desktop candidate is open/draft: +18/-31 vs main",
+        "PR #3820 contains a separate technical-debt audit",
+        "PR #3366 FlClash API and #3298 Antigravity CDP remain separate candidate lines"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/kontur",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Kontur Telegram Mini App/product plus deployment and AUTOPILOT lines",
+      "branches": 103,
+      "files_main_snapshot": 294,
+      "prs": {
+        "total": 27,
+        "open": 20,
+        "merged": 3,
+        "closed_unmerged": 4
+      },
+      "issues": {
+        "total": 5,
+        "open": 5,
+        "closed": 0
+      },
+      "notable": [
+        "PR #11 separates current product from legacy V1-V5",
+        "PRs #20-27 preserve visual/hatch candidate chain",
+        "PR #32 AUTOPILOT v4.1 control plane: +40/-30 vs main"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/ai-mirrors",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Private evolved/decomposed AI MIRRORS source",
+      "branches": 5,
+      "files_main_snapshot": 403,
+      "prs": {
+        "total": 4,
+        "open": 2,
+        "merged": 1,
+        "closed_unmerged": 1
+      },
+      "issues": {
+        "total": 0,
+        "open": 0,
+        "closed": 0
+      },
+      "notable": [
+        "PR #3 reconciles GitHub against the live Hugging Face runtime and explicitly warns they are not byte-identical mirrors",
+        "PR #4 proves Telegram binding read-only"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/free-fabric-ci",
+      "access": "owner",
+      "visibility": "public",
+      "role": "Public reusable Free Fabric CI/acceptance/release substrate",
+      "branches": 11,
+      "files_main_snapshot": 37,
+      "prs": {
+        "total": 5,
+        "open": 2,
+        "merged": 2,
+        "closed_unmerged": 1
+      },
+      "issues": {
+        "total": 3,
+        "open": 0,
+        "closed": 3
+      },
+      "notable": [
+        "PR #2 public AUTOPILOT scheduler/control-plane contracts pairs conceptually with Kontur AUTOPILOT v4.1",
+        "PR #1 cross-OS reproducible release archive proof"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/notion-agent-cli",
+      "access": "owner",
+      "visibility": "private",
+      "role": "Notion agent/session/protocol CLI/library",
+      "branches": 2,
+      "files_main_snapshot": 38,
+      "prs": {
+        "total": 1,
+        "open": 0,
+        "merged": 1,
+        "closed_unmerged": 0
+      },
+      "issues": {
+        "total": 0,
+        "open": 0,
+        "closed": 0
+      },
+      "tags": [
+        "v0.1.12-baseline",
+        "v0.1.13",
+        "proven-live-0.1.13-baseline",
+        "proven-live-0.1.13-reconciled",
+        "proven-release-0.1.13"
+      ]
+    },
+    {
+      "full_name": "Ai-b0ss/chatgpt-429-conversation-recovery",
+      "access": "owner",
+      "visibility": "public",
+      "role": "Standalone ChatGPT conversation availability/429/stream recovery extension",
+      "branches": 8,
+      "files_main_snapshot": 40,
+      "prs": {
+        "total": 1,
+        "open": 0,
+        "merged": 1,
+        "closed_unmerged": 0
+      },
+      "issues": {
+        "total": 1,
+        "open": 0,
+        "closed": 1
+      },
+      "tags": [
+        "v0.8.0",
+        "v0.8.1",
+        "v0.8.2",
+        "v0.8.3",
+        "v0.8.4",
+        "v0.9.3"
+      ]
+    },
+    {
+      "full_name": "Japan-Live/ai_mirrors",
+      "access": "admin-collaborator",
+      "visibility": "public",
+      "role": "Older public monolithic AI MIRRORS/GPT Mirror lineage",
+      "branches": 1,
+      "main_head_snapshot": "755ab4edee824e12746ff98a7e3d39744cd24ec8",
+      "created_at": "2026-06-13",
+      "last_push_snapshot": "2026-06-27",
+      "notable": [
+        "app.py monolith ~529 KB",
+        "same product concepts/name as AI MIRRORS but no shared visible commit ancestry with Ai-b0ss/ai-mirrors current history"
+      ]
+    },
+    {
+      "full_name": "ostrovok-hackathon-2026/if",
+      "access": "organization-member-read",
+      "visibility": "private",
+      "role": "Ostrovok Hackathon 2026 team repository; currently essentially project-template README",
+      "branches": 1
+    },
+    {
+      "full_name": "ostrovok-hackathon-2026/project-template",
+      "access": "organization-member-read",
+      "visibility": "public",
+      "role": "Hackathon base template",
+      "branches": 1
+    }
+  ],
+  "relations": [
+    {
+      "from": "Japan-Live/ai_mirrors",
+      "to": "Ai-b0ss/ai-mirrors",
+      "type": "product-lineage",
+      "confidence": "high product overlap / no shared visible Git ancestry",
+      "evidence": "same AI MIRRORS/GPT Mirror product, Telegram/HF/router/search/brain concepts; public line predates private migration"
+    },
+    {
+      "from": "Ai-b0ss/ai-mirrors",
+      "to": "Hugging Face runtime",
+      "type": "deployment-reconciliation",
+      "confidence": "explicit",
+      "evidence": "Ai-b0ss/ai-mirrors PR #3"
+    },
+    {
+      "from": "Ai-b0ss/qwen-free-api",
+      "to": "Ai-b0ss/qwen-workspace",
+      "type": "runtime-to-orchestration",
+      "confidence": "explicit",
+      "evidence": "workspace docs identify qwen-free-api as separate local proxy; Free Fabric/Qwen work spans both"
+    },
+    {
+      "from": "Ai-b0ss/qwen-workspace",
+      "to": "Ai-b0ss/free-fabric-ci",
+      "type": "private-to-public-substrate",
+      "confidence": "high",
+      "evidence": "Free Fabric implementation/proof lines in qwen-workspace; public reusable harness/control contracts in free-fabric-ci"
+    },
+    {
+      "from": "Ai-b0ss/qwen-free-api",
+      "to": "Ai-b0ss/kontur",
+      "type": "cross-repo-ci-executor",
+      "confidence": "explicit",
+      "evidence": "open autopilot/ci PRs named Kontur Chromium QA and cross-repo probes"
+    },
+    {
+      "from": "Ai-b0ss/qwen-free-api",
+      "to": "Ai-b0ss/notion-agent-bridge",
+      "type": "cross-repo-notion-proof-carrier",
+      "confidence": "explicit",
+      "evidence": "Notion Stage-B/provider carrier PRs in qwen-free-api"
+    },
+    {
+      "from": "Ai-b0ss/qwen-workspace",
+      "to": "Ai-b0ss/notion-agent-bridge",
+      "type": "free-fabric-notion/windows-evolution",
+      "confidence": "high",
+      "evidence": "Free Fabric Notion provider/binding work plus later Windows substrate in notion-agent-bridge"
+    },
+    {
+      "from": "Ai-b0ss/free-fabric-ci",
+      "to": "Ai-b0ss/kontur",
+      "type": "shared-autopilot-control-plane",
+      "confidence": "high",
+      "evidence": "paired open PRs on 2026-09-03: reusable public scheduler contracts and Kontur v4.1 private state/CAS plane"
+    },
+    {
+      "from": "Ai-b0ss/notion-agent-bridge",
+      "to": "Ai-b0ss/notion-agent-cli",
+      "type": "notion-agent-protocol-lineage",
+      "confidence": "high",
+      "evidence": "shared Notion agent/protocol work; notion-agent-cli 0.1.13 reconciliation/proven tags"
+    },
+    {
+      "from": "Ai-b0ss/human-1.5",
+      "to": "human-2.0-foundation branch",
+      "type": "intentional-restart",
+      "confidence": "explicit",
+      "evidence": "PR #1 benchmark-first foundation, no legacy rewrite"
+    }
+  ],
+  "issue_streams": {
+    "Ai-b0ss/notion-agent-bridge": {
+      "total": 3698,
+      "prefixes": {
+        "FF-WIN": 1341,
+        "FF-AUTO": 1892,
+        "FF-FAST": 122,
+        "FF-RUNNER": 67,
+        "FF-GH-INBOX": 11,
+        "FF-GH": 23,
+        "ASTRA-EVIDENCE-EXPORT": 3,
+        "FF-INBOX-TEST": 1
+      },
+      "thematic_title_counts": {
+        "Notion": 33,
+        "Astra": 51,
+        "OmniRouter": 95,
+        "Antigravity": 201,
+        "Commander": 222,
+        "Cursor": 3,
+        "Excel": 34,
+        "browser": 95,
+        "native": 57,
+        "vision": 24,
+        "WGC": 11,
+        "UIA": 18
+      },
+      "interpretation": "Operational transport, benchmark, evidence and recovery ledger. Search issue bodies/titles before concluding a bridge experiment or live proof never existed."
+    }
+  },
+  "limitations": [
+    "GitHub Actions listing is only partially visible through the current connector; workflow files, commit runs, PR descriptions and saved evidence remain discoverable.",
+    "Uncommitted local work, garbage-collected commits and external artifacts not linked anywhere remain outside GitHub archaeology.",
+    "Open PRs can be stale, disposable or intentionally DO NOT MERGE; inspect base, head, body, diff and later history before reuse."
+  ]
+}
