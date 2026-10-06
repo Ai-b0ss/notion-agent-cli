@@ -476,7 +476,26 @@
       "This is a 2026-10-06 navigation snapshot, not live GitHub authority; re-fetch objects before freshness-sensitive action.",
       "The 441-PR total covers the nine owned repositories indexed here; external/org surfaces such as Japan-Live/ai_mirrors, Ostrovok repositories and Hugging Face are separate topology surfaces.",
       "notion-agent-bridge has dedicated issue-ledger archaeology; this pass did not create a byte-for-byte archive of all issue bodies for every repository.",
-      "Per-repository branch/file indexes remain the exact-ref navigation layer; this pass did not regenerate every historical branch file index."
-    ]
+      "All live branch names were cross-checked against branch-index (756/756). Stored branch head SHAs remain snapshots, and exact per-ref file/symbol indexes are generated on demand rather than precomputed for every historical ref."
+    ],
+    "live_branch_index": {
+      "total_live_branches": 756,
+      "repositories": 9,
+      "missing_live_branches_from_index": 0,
+      "stale_index_branch_names": 0,
+      "counts": {
+        "Ai-b0ss/human-1.5": 2,
+        "Ai-b0ss/qwen-workspace": 120,
+        "Ai-b0ss/qwen-free-api": 275,
+        "Ai-b0ss/notion-agent-bridge": 230,
+        "Ai-b0ss/kontur": 103,
+        "Ai-b0ss/ai-mirrors": 5,
+        "Ai-b0ss/notion-agent-cli": 2,
+        "Ai-b0ss/free-fabric-ci": 11,
+        "Ai-b0ss/chatgpt-429-conversation-recovery": 8
+      },
+      "verification": "Compared every live GitHub branch name against each repository's .agent/branch-index.json on 2026-10-06.",
+      "head_rule": "Stored non-main head SHAs are navigation snapshots; re-resolve the live head before freshness-sensitive work."
+    }
   }
 }
