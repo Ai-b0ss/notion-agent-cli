@@ -434,5 +434,49 @@
       }
     ],
     "use": "Consult the relevant ledger before claiming prior PR work is absent, abandoned, or too large based on head-vs-main. Re-fetch the live PR before freshness-sensitive action."
+  },
+  "navigation_health_snapshot": {
+    "audited_at": "2026-10-06",
+    "status": "PASS_WITH_KNOWN_BOUNDARIES",
+    "owned_repository_count": 9,
+    "private_owned_repository_count": 7,
+    "public_owned_repository_count": 2,
+    "complete_pr_ledger": {
+      "total": 441,
+      "open": 226,
+      "merged": 98,
+      "closed_unmerged": 117,
+      "repositories": 9,
+      "duplicate_pr_numbers_within_repo": 0,
+      "missing_required_identity_fields": 0,
+      "required_fields": [
+        "number",
+        "title",
+        "base",
+        "base_sha",
+        "head",
+        "head_sha",
+        "url"
+      ],
+      "ordering": "ascending by PR number",
+      "bootstrap": "All 9 AGENTS.md files directly require .agent/pr-ledger.json for historical/prior-work archaeology.",
+      "object_index_link": "All 9 .agent/github-objects-index.json files link to .agent/pr-ledger.json."
+    },
+    "private_canon_identity": {
+      "repositories": 7,
+      "idea_lineages_json_blob": "b588fdc9058b310a448b78ac579f5ec63a62ec96",
+      "idea_lineages_md_blob": "149b231271dcf44fe7deb1ba0cff42a2acff6cc3",
+      "note": "All seven private repositories must carry byte-identical account-index, ACCOUNT_ATLAS and both lineage files. Self-hashes are intentionally not embedded because they are self-referential; verify blob equality directly."
+    },
+    "public_boundary": {
+      "status": "PASS",
+      "rule": "Public PR ledgers contain only their own public repository history, and public AGENTS/object indexes explicitly prohibit inferring or publishing private account topology."
+    },
+    "known_boundaries": [
+      "This is a 2026-10-06 navigation snapshot, not live GitHub authority; re-fetch objects before freshness-sensitive action.",
+      "The 441-PR total covers the nine owned repositories indexed here; external/org surfaces such as Japan-Live/ai_mirrors, Ostrovok repositories and Hugging Face are separate topology surfaces.",
+      "notion-agent-bridge has dedicated issue-ledger archaeology; this pass did not create a byte-for-byte archive of all issue bodies for every repository.",
+      "Per-repository branch/file indexes remain the exact-ref navigation layer; this pass did not regenerate every historical branch file index."
+    ]
   }
 }
