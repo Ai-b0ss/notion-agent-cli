@@ -123,6 +123,22 @@ Private PR #3 explicitly established that private GitHub was a structural supers
 - PR #1: reproducible cross-Windows/Linux release archive proof.
 - PR #2: reusable public scheduler/control-plane contracts (state validation, sticky leases, dependency transitions, provider outcome classification). It aligns closely in timing and design with Kontur AUTOPILOT v4.1.
 
+## Navigation health audit — 2026-10-06
+
+The account navigation layer passed a cross-repository consistency audit.
+
+- **9 / 9 owned repositories** have a complete `.agent/pr-ledger.json`.
+- **441 / 441 PRs** are represented: **226 open, 98 merged, 117 closed-unmerged**.
+- Every ledger entry has the identity fields required for correct archaeology: PR number/title, real `base` + `base_sha`, real `head` + `head_sha`, and URL.
+- No per-repository PR-number duplicates were found; every ledger is sorted by PR number.
+- **9 / 9 `AGENTS.md`** files now directly require the ledger when historical/prior/superseded work may matter.
+- **9 / 9 `.agent/github-objects-index.json`** files link to the ledger.
+- The 7 private repositories share byte-identical account/lineage canon; the 2 public repositories expose only their own public PR history and explicitly preserve the privacy boundary.
+
+State split is important: the **117 closed-unmerged PRs are first-class archaeology**, not an automatic “abandoned” bucket. Check descendants, integration PRs, exact heads and proof-carrier roles before classification.
+
+Known boundaries: this is a snapshot, external/org/Hugging Face surfaces remain separate, and the huge Notion issue ledger is indexed thematically rather than copied wholesale into every repository. Re-fetch live GitHub state before freshness-sensitive actions.
+
 ## Complete PR ledgers
 
 A static **all-state PR ledger** now exists at `.agent/pr-ledger.json` in every owned repository. Across the 9 owned repositories the snapshot covers **441 / 441 PRs**: open, merged and closed-unmerged.
