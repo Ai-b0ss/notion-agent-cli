@@ -14,10 +14,10 @@ Snapshot: 2026-10-06. Resolve live state before freshness-sensitive decisions.
 
 | Repository | Main role | Branches | Pull requests | Issues |
 |---|---|---:|---|---|
-| `human-1.5` | Human legacy MVP + Human 2.0 restart | 2 | 1 open | 0 |
+| `human` | Human legacy MVP + Human 2.0 restart | 2 | 1 open | 0 |
 | `qwen-workspace` | Qwen/Pixel/Free Fabric umbrella workspace | 120 | 33 open / 39 merged / 56 closed-unmerged | 2 open |
 | `qwen-free-api` | Qwen proxy/runtime + proof/CI carrier | 275 | 90 open / 19 merged / 25 closed-unmerged | 2 closed |
-| `notion-agent-bridge` | Notion/NCM lineage → Windows Agent Bridge / FFBridge | 230 | 78 open / 32 merged / 30 closed-unmerged | 39 open / 3659 closed |
+| `windows-agent-bridge` | Notion/NCM lineage → Windows Agent Bridge / FFBridge | 230 | 78 open / 32 merged / 30 closed-unmerged | 39 open / 3659 closed |
 | `kontur` | Kontur product + deployment + AUTOPILOT lines | 103 | 20 open / 3 merged / 4 closed-unmerged | 5 open |
 | `ai-mirrors` | private evolved/decomposed AI MIRRORS | 5 | 2 open / 1 merged / 1 closed-unmerged | 0 |
 | `free-fabric-ci` | public reusable Free Fabric substrate | 11 | 2 open / 2 merged / 1 closed-unmerged | 3 closed |
@@ -50,13 +50,13 @@ qwen-free-api  ◄──────────────► qwen-workspace
    kontur ◄──── AUTOPILOT ─── free-fabric-ci
                                     │
                                     ▼
-                         notion-agent-bridge
+                         windows-agent-bridge
                          Notion/NCM → Windows/FFBridge/CUA
                                     │
                                     ▼
                            notion-agent-cli
 
-human-1.5 ──► human-2.0-foundation
+human ──► human-2.0-foundation
 
 chatgpt-429-conversation-recovery is mostly standalone. Similar ChatGPT/browser
 research elsewhere is not proof of code lineage.
@@ -65,7 +65,7 @@ research elsewhere is not proof of code lineage.
 ## Why Git-only archaeology still misses major work
 
 1. **Open PRs are project dossiers.** The four heaviest repositories currently contain 221 open PRs. Many are frozen proofs, but several preserve substantial unintegrated implementations.
-2. **Issue streams can be runtime logs.** `notion-agent-bridge` has 3698 issues; most are transport, benchmark, evidence or recovery records rather than backlog tickets.
+2. **Issue streams can be runtime logs.** `windows-agent-bridge` has 3698 issues; most are transport, benchmark, evidence or recovery records rather than backlog tickets.
 3. **PR bodies preserve intent and proof boundaries.** They frequently explain why something was not merged and what remains unproven.
 4. **Workflow files encode historical acceptance contracts.** NCM28, FF-WIN/v3, RFGI and CUA epochs are visible in workflows even when code moved.
 5. **Tags/releases are stronger historical anchors than branch names.**
@@ -92,7 +92,7 @@ There are 90 open PRs; 81 are `ci/*`. This repository became a proof carrier for
 
 Do not interpret raw ahead/behind without the PR base. Example: PR #95 is a tiny one-file `express` dependency fix whose base is an old autopilot branch; comparing its inherited head directly against modern main makes it look like a 770-commit feature.
 
-### notion-agent-bridge
+### windows-agent-bridge
 
 This is the densest archaeology surface.
 
@@ -153,7 +153,7 @@ Use the ledger for exhaustive navigation, then fetch the live PR before acting. 
 
 The two public repositories contain only their own already-public PR history; their ledgers do not expose private account topology.
 
-## notion-agent-bridge Issues = operational database
+## windows-agent-bridge Issues = operational database
 
 Snapshot prefix counts:
 - FF-AUTO: 1892
@@ -173,7 +173,7 @@ These issues record diagnostics, retries, benchmark runs, idempotency, uncertain
 - `qwen-free-api`: `v1.0.1`
 - `notion-agent-cli`: `v0.1.12-baseline`, `v0.1.13`, proven-live/reconciled/release 0.1.13 tags
 - `chatgpt-429-conversation-recovery`: v0.8.0 → v0.8.4 → v0.9.3
-- `notion-agent-bridge`: proven 2026-09-07 tags plus GitHub Windows transport v5 RC1/RC2 prereleases
+- `windows-agent-bridge`: proven 2026-09-07 tags plus GitHub Windows transport v5 RC1/RC2 prereleases
 
 ## Mandatory account-wide absence test
 
