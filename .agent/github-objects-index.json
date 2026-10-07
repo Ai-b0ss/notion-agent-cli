@@ -30,7 +30,7 @@
     }
   ],
   "relation": {
-    "repo": "Ai-b0ss/notion-agent-bridge",
+    "repo": "Ai-b0ss/windows-agent-bridge",
     "kind": "shared Notion agent/protocol lineage; inspect bridge historical Notion/NCM PRs when protocol behavior is unclear"
   },
   "complete_pr_ledger": {
