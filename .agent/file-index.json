@@ -6,8 +6,8 @@
   "files": [
     {
       "path": ".agent/account-index.json",
-      "blob": "a1b4a5956b2fc353923a2394202dd7f37289fb99",
-      "bytes": 17007,
+      "blob": "1cdac1117e7b5a2bc276521153f27e2f29322f0c",
+      "bytes": 18500,
       "role": "agent_tooling"
     },
     {
