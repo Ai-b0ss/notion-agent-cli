@@ -5,15 +5,45 @@
   "self_indexing": "`.agent/file-index.json` is intentionally omitted to avoid recursive self-staleness.",
   "files": [
     {
-      "path": ".agent/README.md",
-      "blob": "c57c6a47ad5a0badf634cfc8e2a006a1ef30e344",
-      "bytes": 1549,
+      "path": ".agent/account-index.json",
+      "blob": "a1b4a5956b2fc353923a2394202dd7f37289fb99",
+      "bytes": 17007,
       "role": "agent_tooling"
     },
     {
       "path": ".agent/branch-index.json",
       "blob": "c5766db46e2dd015900504604ed28c7ad5885b6a",
       "bytes": 646,
+      "role": "agent_tooling"
+    },
+    {
+      "path": ".agent/github-objects-index.json",
+      "blob": "4b5f7d5d7195507446d3a026a211ad77e1750a96",
+      "bytes": 1597,
+      "role": "agent_tooling"
+    },
+    {
+      "path": ".agent/idea-lineages.json",
+      "blob": "70f3108cd4c41cd1dffd9a8e6a6dda460c6e02fa",
+      "bytes": 42109,
+      "role": "agent_tooling"
+    },
+    {
+      "path": ".agent/pr-ledger.json",
+      "blob": "6bf60260c2b3b9341e26a8972d10307cf7379f63",
+      "bytes": 1500,
+      "role": "agent_tooling"
+    },
+    {
+      "path": ".agent/README.md",
+      "blob": "c57c6a47ad5a0badf634cfc8e2a006a1ef30e344",
+      "bytes": 1549,
+      "role": "agent_tooling"
+    },
+    {
+      "path": ".agent/tag-release-index.json",
+      "blob": "a6dd7f79d212680846d9b2e560da9c6c6707f1b2",
+      "bytes": 4486,
       "role": "agent_tooling"
     },
     {
@@ -36,8 +66,8 @@
     },
     {
       "path": "AGENTS.md",
-      "blob": "35883b53f2d0cf9a341b3e6715bda5919e420e93",
-      "bytes": 1871,
+      "blob": "f66d9bcdb35137409cdb9d62c0e49979a9532902",
+      "bytes": 3436,
       "role": "agent_tooling"
     },
     {
@@ -47,21 +77,9 @@
       "role": "agent_tooling"
     },
     {
-      "path": "GEMINI.md",
-      "blob": "9a0eeffd26f59d4b73fba0d17bcd5d128677b043",
-      "bytes": 588,
-      "role": "agent_tooling"
-    },
-    {
-      "path": "LICENSE",
-      "blob": "a3bac8e5786e9247ae8d2039468b90974a3717a8",
-      "bytes": 1066,
-      "role": "documentation"
-    },
-    {
-      "path": "README.md",
-      "blob": "4fd01ba375cd45959deb590f49643ba147506efd",
-      "bytes": 11616,
+      "path": "docs/ACCOUNT_ATLAS.md",
+      "blob": "2923d3935ed08fc3bd2f880ad77f709a9af9de2e",
+      "bytes": 13343,
       "role": "documentation"
     },
     {
@@ -77,16 +95,40 @@
       "role": "agent_tooling"
     },
     {
+      "path": "docs/IDEA_LINEAGES.md",
+      "blob": "dd5e4739a1981f54321d4a5f88d0a78f20cc4361",
+      "bytes": 28058,
+      "role": "documentation"
+    },
+    {
       "path": "docs/REPOSITORY_INVENTORY.md",
       "blob": "9b411b0f0f7cc5ce0f11881b2654570b6c831a0c",
       "bytes": 3444,
       "role": "agent_tooling"
     },
     {
+      "path": "GEMINI.md",
+      "blob": "9a0eeffd26f59d4b73fba0d17bcd5d128677b043",
+      "bytes": 588,
+      "role": "agent_tooling"
+    },
+    {
+      "path": "LICENSE",
+      "blob": "a3bac8e5786e9247ae8d2039468b90974a3717a8",
+      "bytes": 1066,
+      "role": "documentation"
+    },
+    {
       "path": "pyproject.toml",
       "blob": "793605438fcf4657ced169f83ac4414ef58a1425",
       "bytes": 752,
       "role": "packaging"
+    },
+    {
+      "path": "README.md",
+      "blob": "4fd01ba375cd45959deb590f49643ba147506efd",
+      "bytes": 11616,
+      "role": "documentation"
     },
     {
       "path": "src/notion_agent_cli/__init__.py",
