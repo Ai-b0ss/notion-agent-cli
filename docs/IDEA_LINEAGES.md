@@ -25,7 +25,7 @@ A lineage can legitimately have several simultaneous truth surfaces. Do not coll
 
 **Lineage ID:** `human-dialogue-platform`
 
-Legacy product/runtime remains on `Ai-b0ss/human-1.5/main`. PR #1 / branch `human-2.0-foundation` is an intentional restart and remains **open / draft / unmerged**, but it has advanced far beyond its original foundation PR body.
+Legacy product/runtime remains on `Ai-b0ss/human/main`. PR #1 / branch `human-2.0-foundation` is an intentional restart and remains **open / draft / unmerged**, but it has advanced far beyond its original foundation PR body.
 
 ### Epoch A — benchmark-first foundation
 - HumanBench v0, policy/data contracts, strict controller, adversarial memory cases and benchmark tooling.
@@ -57,7 +57,7 @@ Remaining measured-product boundary: live MemoryExtractBench v1, AnswerBench v0,
 
 Guard: PR-body prose is stale relative to the branch. Do not claim Human 2.0 is still waiting for its first real free/local model probe. Equally, do not treat benchmark and local-runtime progress as a merged/released Human 2.0 product.
 
-Primary entry points: `human-1.5#1`, `human2/STATUS.md`, `human2/README.md`, `human2/EVALUATION.md`, `human2/FREE_INFERENCE_AUDIT.md`.
+Primary entry points: `human#1`, `human2/STATUS.md`, `human2/README.md`, `human2/EVALUATION.md`, `human2/FREE_INFERENCE_AUDIT.md`.
 
 ---
 
@@ -94,7 +94,7 @@ This is the longest cross-repo systems lineage in the account.
 
 ### Epoch C — provider-generic fabric
 - `qwen-workspace#91`: provider-generic execution target registry and journal-bound result verification.
-- Notion provider/worker proofs span `notion-agent-bridge` and later `qwen-workspace#116`.
+- Notion provider/worker proofs span `windows-agent-bridge` and later `qwen-workspace#116`.
 
 ### Epoch D — distributed/PC-independent substrate
 - `qwen-workspace#121`: durable distributed control plane, tool broker and heterogeneous compute.
@@ -182,7 +182,7 @@ Guard: keep four states separate: provider-free runtime reliability, live-provid
 
 **Lineage ID:** `notion-ncm-protocol`
 
-- Early NCM28 exact-source/guarded-parent sequence: `notion-agent-bridge#1–#7`.
+- Early NCM28 exact-source/guarded-parent sequence: `windows-agent-bridge#1–#7`.
 - Later bridge integration/consolidation includes PR #88 and PR #131.
 - `notion-agent-cli#1` reconciles 0.1.13 protocol semantics, workspace binding, Windows UTF-8 and durable recovery; merged with 24/24 unit tests plus isolated package/live inference verification.
 
@@ -397,7 +397,7 @@ Guard: Q15 is an execution/proof sublineage, not equivalent to general Qwen mode
 
 **Lineage ID:** `astra-audit-state-transport`
 
-This lineage is largely invisible in PR-only archaeology and was recovered from the `notion-agent-bridge` issue ledger.
+This lineage is largely invisible in PR-only archaeology and was recovered from the `windows-agent-bridge` issue ledger.
 
 Observed sampled epoch: **7–8 September 2026**.
 
@@ -408,7 +408,7 @@ Observed sampled epoch: **7–8 September 2026**.
 
 Guard: do not infer that Astra belongs to the Windows Bridge product merely because its transport ran through that repository. The issue ledger is acting as an execution/evidence carrier.
 
-Primary archaeology: `notion-agent-bridge/docs/ISSUE_ARCHAEOLOGY.md`.
+Primary archaeology: `windows-agent-bridge/docs/ISSUE_ARCHAEOLOGY.md`.
 
 
 ---
@@ -423,7 +423,7 @@ This predates the later Free Fabric architecture and is easy to miss because the
 - `qwen-workspace#1`, `qwen-free-api#1`, `kontur#1`: repository-specific offline/safe GitHub Actions foundations. The Kontur body explicitly calls this the first base contour for phone-driven branch/PR work.
 
 ### Epoch B — common remote task/PR contract
-- `qwen-workspace#2`, `qwen-free-api#2`, `kontur#2`, `notion-agent-bridge#5`: a shared remote-task entry and PR contract with live/production work disabled by default.
+- `qwen-workspace#2`, `qwen-free-api#2`, `kontur#2`, `windows-agent-bridge#5`: a shared remote-task entry and PR contract with live/production work disabled by default.
 
 ### Epoch C — autonomous repair-loop smoke
 - `kontur#3`: intentionally starts RED, requires the remote agent to read the real Actions failure, repair the marker and wait for a green rerun.
