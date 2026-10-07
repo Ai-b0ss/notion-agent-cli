@@ -11,7 +11,7 @@ Before every substantial repository task, also read:
 6. `.agent/pr-ledger.json` — complete all-state PR archaeology (open, merged, and closed-unmerged) with real base/head SHAs. Read it whenever prior, abandoned, superseded, migrated, or historical PR work could matter.
 7. `.agent/tag-release-index.json` — exact tag/release archaeology, including terminal tag targets and release-asset digests. Read it when a version, release, accepted/proven baseline, handoff archive, or historical artifact may matter.
 
-These are navigation snapshots, not live authority: re-resolve current GitHub state when freshness matters.
+These are navigation snapshots, not live authority: re-resolve current GitHub state when freshness matters. Any SHA, branch head, PR state, counter, test total, or "current status" written in README/docs is evidence for its recorded snapshot only unless it matches the live object you just resolved.
 
 Reading the atlas and lineage map is mandatory; exhaustively searching every other repository is not. When a task names a system/idea, resolve its lineage ID and epoch before assuming the current repository is the project boundary. Expand account-wide archaeology when the task may overlap prior, abandoned, migrated, cross-repo or externally deployed work.
 
