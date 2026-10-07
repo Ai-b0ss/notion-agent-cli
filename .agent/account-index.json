@@ -497,5 +497,49 @@
       "verification": "Compared every live GitHub branch name against each repository's .agent/branch-index.json on 2026-10-06.",
       "head_rule": "Stored non-main head SHAs are navigation snapshots; re-resolve the live head before freshness-sensitive work."
     }
+  },
+  "blind_navigation_validation_20261007": {
+    "status": "PASS_WITH_KNOWN_BOUNDARIES",
+    "tests": [
+      {
+        "start": "Ai-b0ss/human",
+        "result": "PASS",
+        "verified": [
+          "legacy-vs-human2",
+          "live-pr-head",
+          "exact-head-ci",
+          "stale-doc-detection"
+        ]
+      },
+      {
+        "start": "Ai-b0ss/windows-agent-bridge",
+        "result": "PASS",
+        "verified": [
+          "historical-vs-live-proof",
+          "pr-3834",
+          "source-package-installed-identity"
+        ]
+      },
+      {
+        "start": "Ai-b0ss/ai-mirrors",
+        "result": "PASS",
+        "verified": [
+          "cross-repo-free-fabric-lineage",
+          "superseded-vs-abandoned",
+          "proof-carrier-vs-product-owner"
+        ]
+      }
+    ],
+    "corrections": [
+      "all 9 AGENTS.md now make freshness rules explicit",
+      "Human and Windows Bridge README current-status wording made snapshot-safe",
+      "post-fix file-index audit: 9/9 repositories, 0 missing, 0 extra, 0 SHA mismatches, 0 byte-size mismatches"
+    ],
+    "boundaries": [
+      "accepted blind sessions used Codex CLI",
+      "Claude Code smoke not counted because local non-interactive launcher dropped the supplied prompt under remote stdin",
+      "uncommitted/unlinked external work remains outside GitHub-only archaeology"
+    ],
+    "rule": "navigation tells the agent where/how to look; live objects and exact-version evidence decide current truth"
   }
 }
