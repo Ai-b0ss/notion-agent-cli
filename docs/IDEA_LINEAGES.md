@@ -25,14 +25,39 @@ A lineage can legitimately have several simultaneous truth surfaces. Do not coll
 
 **Lineage ID:** `human-dialogue-platform`
 
-- Legacy product/runtime remains on `Ai-b0ss/human-1.5/main`.
-- PR #1 (`human-2.0-foundation`) is an intentional restart, not a small feature branch.
-- It introduces HumanBench, policy/data contracts, a strict controller, adversarial memory cases and benchmark tooling.
-- The branch is intentionally **open / draft / unmerged** pending real free/local-model baseline-vs-controller measurement.
+Legacy product/runtime remains on `Ai-b0ss/human-1.5/main`. PR #1 / branch `human-2.0-foundation` is an intentional restart and remains **open / draft / unmerged**, but it has advanced far beyond its original foundation PR body.
 
-Guard: do not infer that legacy FAI/IGS is the intended Human 2.0 architecture, and do not call PR #1 abandoned merely because it is unmerged.
+### Epoch A — benchmark-first foundation
+- HumanBench v0, policy/data contracts, strict controller, adversarial memory cases and benchmark tooling.
+- Early PR-body proof recorded 25/25 local tests and deliberately postponed real free/local-model measurement.
 
-Primary entry points: `human-1.5#1`, `human2/README.md`, `human2/STATUS.md`.
+### Epoch B — measured memory architecture
+Current branch evidence now includes:
+- real GLM-5.3 HumanBench decisions rescored **30/30** on frozen v0;
+- RetrievalBench controls: lexical **25/30**, SQLite + multilingual-E5 **29/30**, Mem0 OSS **29/30**, Graphiti flat retrieval **28/30**;
+- selected MVP backend: Human SQLite + local multilingual-E5, with zero forbidden-memory leakage on the selected benchmark;
+- frozen MemoryExtractBench v1, AnswerBench v0, MemoryLifecycleBench v1 (**17/17 deterministic**), held-out AnswerBench and blind PairwiseEval methodology;
+- end-to-end extract -> guarded write -> semantic retrieve -> controller -> final-answer path plus privacy, tracing, storage-recovery and bounded-context contracts.
+
+### Epoch C — durable personal continuity and provider routing
+The latest 12 commits after historical head `f0191c7…` add provider quota awareness/doctor/pool behavior and regressions for:
+- cross-conversation durable recall;
+- cross-session correction/supersession;
+- project-scope and cross-user isolation;
+- memory-grounded recall fidelity;
+- one-turn preference override;
+- conflicting durable preferences.
+
+Current live head at the 2026-10-07 refresh is `31d9408a6d8552401e93e0bedb2cd274909c489d`:
+- PR #1: 111 commits, 185 changed files;
+- GitHub Actions `Human 2.0 CI` run `37555589776`: **success**.
+- Current branch docs report a 387/387 local suite on Python 3.12 and 3.13; README also mentions a later 424-test local branch suite before matrix verification. Treat those as separate recorded claims until tied to one exact run rather than adding them together.
+
+Remaining measured-product boundary: live MemoryExtractBench v1, AnswerBench v0, held-out AnswerBench and PairwiseEval are still incomplete. No UI rewrite should be inferred complete.
+
+Guard: PR-body prose is stale relative to the branch. Do not claim Human 2.0 is still waiting for its first real free/local model probe. Equally, do not treat benchmark and local-runtime progress as a merged/released Human 2.0 product.
+
+Primary entry points: `human-1.5#1`, `human2/STATUS.md`, `human2/README.md`, `human2/EVALUATION.md`, `human2/FREE_INFERENCE_AUDIT.md`.
 
 ---
 
@@ -205,11 +230,26 @@ This is the densest lineage and must be navigated by epoch.
 - PR #3823: durable outcomes and restricted/background execution proof on a stacked branch; closed unmerged.
 - PR #3831: integrates #3821–#3830 into main; merged and bound to verified installed/cloud smoke evidence.
 
-### 9. Seven Pillars / ordinary-user full-access direction — Oct 3–5
+### 9. Seven Pillars / ordinary-user full-access direction — Oct 3 onward
 - PR #3833: owner requirements and seven pillars; merged.
-- PR #3834: current large candidate, open/draft, exact head `4444e96f…` at the recorded proof point.
-- Run `37384262241` artifact `ff-seven-pillars-contracts`: 501 tests, 0 failures/errors/skips, 41.284 s. It excludes two owner-desktop tests.
-- The expiring Actions artifact has been losslessly archived under `.agent/evidence-index/archive/pr-3834-run-37384262241/` and bound to SHA-256 `2d7cc981…132d`.
+- PR #3834: large continuation candidate, still **open / draft / unmerged**.
+
+Historical exact proof point:
+- head `4444e96fb2ead032083f144de0aa7e93c21b5171`;
+- run `37384262241`, artifact `ff-seven-pillars-contracts`: **501/501**, 0 failures/errors/skips, 41.284 s;
+- two owner-desktop tests excluded;
+- lossless archive: `.agent/evidence-index/archive/pr-3834-run-37384262241/`, ZIP SHA-256 `2d7cc981…132d`.
+
+Continuation after that proof point adds real Cursor HTTP/durable-outcome work, native crash/process-tree recovery, cold/native Office workflows, portable ZIP/Drive/install evidence, UTF-8 installation-path repair and bounded local startup recovery. At the 2026-10-07 refresh:
+- live head: `6d67d762bd976ab0118ea0e30a235f3789fdfa8e`;
+- PR #3834: 30 commits, 164 changed files, +22,061 / -358;
+- three exact-head workflows are green: Windows product gate, FF Transport Contract and guarded-parent exact-source gate;
+- exact-head Seven Pillars isolated-Windows run `37554211082` is **red: 568 passed / 1 failed / 0 errors / 0 skipped**. The sole failure is `test_real_candidate_http_durable_outcome_and_process_tree_cleanup`.
+- its artifact is losslessly archived under `.agent/evidence-index/archive/pr-3834-run-37554211082/`, ZIP SHA-256 `af77785…fcfb`.
+
+Regression localization matters: immediately preceding head `7f12d118…` passed the same Seven Pillars workflow (run `37553895364`), while `6d67d76…` differs from it only by two report files under `docs/LOCAL_STARTUP_RECOVERY_20261007.*`. Therefore the red run is **not proof of a product-code regression**, but the live head is still not green and the root cause remains unresolved.
+
+Guard: never transfer the 501/501 proof from `4444e96…` to later bytes, and never erase the current 568/569 red gate merely because the immediately previous code-identical head was green.
 
 Sublineages worth searching independently: `Commander`, `Antigravity`, `FlClash`, `OmniRouter`, `WGC`, `UIA`, `Office/Excel/Word/PowerPoint`, `hidden apps`, `physical input`.
 
