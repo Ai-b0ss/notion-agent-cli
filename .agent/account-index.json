@@ -5,7 +5,7 @@
   "warning": "Snapshot metadata is navigational, not live authority. Resolve current heads/PR states/issues at read time when decisions depend on freshness.",
   "repositories": [
     {
-      "full_name": "Ai-b0ss/human-1.5",
+      "full_name": "Ai-b0ss/human",
       "access": "owner",
       "visibility": "private",
       "role": "Human product: legacy 1.5 plus Human 2.0 foundation",
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "full_name": "Ai-b0ss/notion-agent-bridge",
+      "full_name": "Ai-b0ss/windows-agent-bridge",
       "access": "owner",
       "visibility": "private",
       "role": "Notion/NCM lineage evolved into Windows Agent Bridge / FFBridge / CUA runtime",
@@ -303,17 +303,17 @@
     },
     {
       "from": "Ai-b0ss/qwen-free-api",
-      "to": "Ai-b0ss/notion-agent-bridge",
+      "to": "Ai-b0ss/windows-agent-bridge",
       "type": "cross-repo-notion-proof-carrier",
       "confidence": "explicit",
       "evidence": "Notion Stage-B/provider carrier PRs in qwen-free-api"
     },
     {
       "from": "Ai-b0ss/qwen-workspace",
-      "to": "Ai-b0ss/notion-agent-bridge",
+      "to": "Ai-b0ss/windows-agent-bridge",
       "type": "free-fabric-notion/windows-evolution",
       "confidence": "high",
-      "evidence": "Free Fabric Notion provider/binding work plus later Windows substrate in notion-agent-bridge"
+      "evidence": "Free Fabric Notion provider/binding work plus later Windows substrate in windows-agent-bridge"
     },
     {
       "from": "Ai-b0ss/free-fabric-ci",
@@ -323,14 +323,14 @@
       "evidence": "paired open PRs on 2026-09-03: reusable public scheduler contracts and Kontur v4.1 private state/CAS plane"
     },
     {
-      "from": "Ai-b0ss/notion-agent-bridge",
+      "from": "Ai-b0ss/windows-agent-bridge",
       "to": "Ai-b0ss/notion-agent-cli",
       "type": "notion-agent-protocol-lineage",
       "confidence": "high",
       "evidence": "shared Notion agent/protocol work; notion-agent-cli 0.1.13 reconciliation/proven tags"
     },
     {
-      "from": "Ai-b0ss/human-1.5",
+      "from": "Ai-b0ss/human",
       "to": "human-2.0-foundation branch",
       "type": "intentional-restart",
       "confidence": "explicit",
@@ -338,7 +338,7 @@
     }
   ],
   "issue_streams": {
-    "Ai-b0ss/notion-agent-bridge": {
+    "Ai-b0ss/windows-agent-bridge": {
       "total": 3698,
       "prefixes": {
         "FF-WIN": 1341,
@@ -386,7 +386,7 @@
     "completeness_note": "For each owned repository, open and closed PR search partitions were each below the 100-result cap and their combined counts matched the existing account-index totals.",
     "ledgers": [
       {
-        "repository": "Ai-b0ss/human-1.5",
+        "repository": "Ai-b0ss/human",
         "path": ".agent/pr-ledger.json",
         "prs": 1
       },
@@ -401,7 +401,7 @@
         "prs": 134
       },
       {
-        "repository": "Ai-b0ss/notion-agent-bridge",
+        "repository": "Ai-b0ss/windows-agent-bridge",
         "path": ".agent/pr-ledger.json",
         "prs": 140
       },
@@ -475,7 +475,7 @@
     "known_boundaries": [
       "This is a 2026-10-06 navigation snapshot, not live GitHub authority; re-fetch objects before freshness-sensitive action.",
       "The 441-PR total covers the nine owned repositories indexed here; external/org surfaces such as Japan-Live/ai_mirrors, Ostrovok repositories and Hugging Face are separate topology surfaces.",
-      "notion-agent-bridge has dedicated issue-ledger archaeology; this pass did not create a byte-for-byte archive of all issue bodies for every repository.",
+      "windows-agent-bridge has dedicated issue-ledger archaeology; this pass did not create a byte-for-byte archive of all issue bodies for every repository.",
       "All live branch names were cross-checked against branch-index (756/756). Stored branch head SHAs remain snapshots, and exact per-ref file/symbol indexes are generated on demand rather than precomputed for every historical ref."
     ],
     "live_branch_index": {
@@ -484,10 +484,10 @@
       "missing_live_branches_from_index": 0,
       "stale_index_branch_names": 0,
       "counts": {
-        "Ai-b0ss/human-1.5": 2,
+        "Ai-b0ss/human": 2,
         "Ai-b0ss/qwen-workspace": 120,
         "Ai-b0ss/qwen-free-api": 275,
-        "Ai-b0ss/notion-agent-bridge": 230,
+        "Ai-b0ss/windows-agent-bridge": 230,
         "Ai-b0ss/kontur": 103,
         "Ai-b0ss/ai-mirrors": 5,
         "Ai-b0ss/notion-agent-cli": 2,
