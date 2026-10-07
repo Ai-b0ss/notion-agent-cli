@@ -15,7 +15,13 @@
       "aliases": [
         "Human 1.5",
         "Human 2.0",
-        "HumanBench"
+        "HumanBench",
+        "RetrievalBench",
+        "MemoryExtractBench",
+        "AnswerBench",
+        "PairwiseEval",
+        "Human SQLite",
+        "multilingual-e5-small"
       ],
       "repositories": [
         "Ai-b0ss/human-1.5"
@@ -24,13 +30,71 @@
         {
           "repo": "Ai-b0ss/human-1.5",
           "pr": 1,
-          "role": "Human 2.0 benchmark-first foundation",
-          "recorded_state": "open/draft/unmerged"
+          "role": "Human 2.0 benchmark/memory/runtime continuation",
+          "recorded_state": "open/draft/unmerged",
+          "head_sha": "31d9408a6d8552401e93e0bedb2cd274909c489d"
+        },
+        {
+          "repo": "Ai-b0ss/human-1.5",
+          "workflow_run": 37555589776,
+          "role": "current-head Human 2.0 CI",
+          "conclusion": "success"
         }
       ],
       "guards": [
         "Legacy FAI/IGS is not automatically the intended Human 2.0 architecture.",
-        "Unmerged does not mean abandoned."
+        "PR-body prose is stale relative to the live branch; inspect exact-head STATUS/README and CI.",
+        "Unmerged does not mean abandoned.",
+        "Do not add test counts from different exact heads/runs."
+      ],
+      "epochs": [
+        {
+          "name": "benchmark-first-foundation",
+          "objects": [
+            "Ai-b0ss/human-1.5#1@early"
+          ],
+          "notes": [
+            "HumanBench/policy/controller foundation; historical PR body 25/25 local tests"
+          ]
+        },
+        {
+          "name": "measured-memory-architecture",
+          "objects": [
+            "human2/STATUS.md",
+            "human2/README.md"
+          ],
+          "evidence": [
+            "GLM-5.3 HumanBench 30/30 rescored",
+            "lexical 25/30",
+            "SQLite+E5 29/30",
+            "Mem0 29/30",
+            "Graphiti flat 28/30",
+            "MemoryLifecycleBench v1 17/17"
+          ]
+        },
+        {
+          "name": "continuity-provider-routing",
+          "date_range": "2026-10-06..2026-10-07",
+          "objects": [
+            "human-2.0-foundation@31d9408a6d8552401e93e0bedb2cd274909c489d",
+            "workflow-run:37555589776"
+          ],
+          "notes": [
+            "quota-aware provider pool/doctor",
+            "cross-conversation recall",
+            "correction/supersession",
+            "project/cross-user isolation",
+            "recall fidelity",
+            "preference conflicts"
+          ]
+        }
+      ],
+      "current_recorded_head": "31d9408a6d8552401e93e0bedb2cd274909c489d",
+      "remaining_boundaries": [
+        "Live MemoryExtractBench v1 is incomplete.",
+        "Live AnswerBench v0 and held-out AnswerBench are incomplete.",
+        "Blind PairwiseEval has no complete live result.",
+        "Branch remains draft/unmerged; benchmark/runtime progress is not a released Human 2.0 product."
       ]
     },
     {
@@ -479,12 +543,15 @@
         },
         {
           "name": "seven-pillars",
-          "date_range": "2026-10-03..2026-10-05",
+          "date_range": "2026-10-03..ongoing",
           "objects": [
             "notion-agent-bridge#3833",
             "notion-agent-bridge#3834",
-            "workflow-run:37384262241"
-          ]
+            "workflow-run:37384262241@4444e96fb2ead032083f144de0aa7e93c21b5171",
+            "workflow-run:37554211082@6d67d762bd976ab0118ea0e30a235f3789fdfa8e"
+          ],
+          "current_head": "6d67d762bd976ab0118ea0e30a235f3789fdfa8e",
+          "current_status": "open/draft/unmerged; 3/4 exact-head workflows green, Seven Pillars isolated Windows 568/569"
         }
       ],
       "sublineage_search_terms": [
@@ -501,14 +568,18 @@
         "physical input"
       ],
       "proof_notes": [
-        "Run 37384262241 on exact candidate 4444e96fb2ead032083f144de0aa7e93c21b5171: 501 tests, 0 failures/errors/skips, 41.284 s.",
-        "Two owner-desktop tests were excluded; this is isolated Windows evidence, not complete live owner-desktop proof.",
-        "Lossless artifact archive: .agent/evidence-index/archive/pr-3834-run-37384262241/ff-seven-pillars-contracts.zip.b64; decoded ZIP sha256 2d7cc981f08e7578c31ebe9eacdbedc52b246f7acecf5c2272f5743103ad132d."
+        "Historical run 37384262241 on exact candidate 4444e96fb2ead032083f144de0aa7e93c21b5171: 501 tests, 0 failures/errors/skips, 41.284 s; two owner-desktop tests excluded.",
+        "Lossless historical artifact archive: .agent/evidence-index/archive/pr-3834-run-37384262241/; ZIP sha256 2d7cc981f08e7578c31ebe9eacdbedc52b246f7acecf5c2272f5743103ad132d.",
+        "Current-head run 37554211082 on 6d67d762bd976ab0118ea0e30a235f3789fdfa8e: 569 tests, 568 passed, 1 failed, 0 errors/skips; sole fail test_real_candidate_http_durable_outcome_and_process_tree_cleanup.",
+        "Lossless current failed artifact archive: .agent/evidence-index/archive/pr-3834-run-37554211082/; ZIP sha256 af77785fffd53555d1ad33018ead9c1219b8399d93bcec6c11882cd7eecbfcfb.",
+        "Previous head 7f12d1183fdc3d60dec2ed112f5782dfdbf92907 passed the Seven Pillars workflow; delta to failed head is docs-only. Root cause of the current red gate remains unresolved."
       ],
       "guards": [
-        "Name the epoch when making a claim.",
+        "Name the epoch and exact head when making a claim.",
         "Do not add overlapping test counts.",
-        "Current PR metadata overrides stale body status text."
+        "Current PR metadata overrides stale body status text.",
+        "Never transfer proof from 4444e96 to later Seven Pillars bytes.",
+        "Do not call 6d67d76 green: its exact-head isolated-Windows gate is red even though the preceding code-identical head was green."
       ],
       "issue_archaeology": {
         "repository": "Ai-b0ss/notion-agent-bridge",
@@ -1386,6 +1457,41 @@
         123
       ],
       "warning": "Most ci/* objects are evidence carriers. Separate provider-free runtime proof, live capability, merged product changes and harness/delivery diagnostics."
+    },
+    "live_head_refresh_20261007": {
+      "human_pr1": {
+        "head": "31d9408a6d8552401e93e0bedb2cd274909c489d",
+        "commits": 111,
+        "workflow_run": 37555589776,
+        "conclusion": "success"
+      },
+      "seven_pillars_pr3834": {
+        "head": "6d67d762bd976ab0118ea0e30a235f3789fdfa8e",
+        "commits": 30,
+        "workflow_runs": [
+          {
+            "id": 37554211069,
+            "name": "NCM28 Windows product gate",
+            "conclusion": "success"
+          },
+          {
+            "id": 37554211082,
+            "name": "FF seven pillars isolated Windows regression",
+            "conclusion": "failure"
+          },
+          {
+            "id": 37554211084,
+            "name": "FF Transport Contract",
+            "conclusion": "success"
+          },
+          {
+            "id": 37554211079,
+            "name": "NCM28 guarded-parent exact source gate",
+            "conclusion": "success"
+          }
+        ],
+        "failed_artifact": "pr-3834-run-37554211082"
+      }
     }
   }
 }
