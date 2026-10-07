@@ -39,5 +39,13 @@
     "total": 1,
     "scope": "all PR states: open, merged, closed-unmerged",
     "rule": "Use this ledger for exhaustive PR archaeology and real base/head SHA lookup; fetch the live PR before freshness-sensitive action."
+  },
+  "complete_tag_release_index": {
+    "path": ".agent/tag-release-index.json",
+    "snapshot_date": "2026-10-07",
+    "tags": 5,
+    "releases": 0,
+    "scope": "all live tags and GitHub Releases; annotated tags dereferenced to terminal targets",
+    "rule": "Use for exact release/tag archaeology; re-fetch live refs/releases before freshness-sensitive action."
   }
 }
