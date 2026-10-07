@@ -9,6 +9,7 @@ Before every substantial repository task, also read:
 4. `.agent/idea-lineages.json` — machine-readable lineage IDs, aliases, key objects and evidence boundaries.
 5. `.agent/github-objects-index.json` — this repository's PR/issue/workflow/tag archaeology.
 6. `.agent/pr-ledger.json` — complete all-state PR archaeology (open, merged, and closed-unmerged) with real base/head SHAs. Read it whenever prior, abandoned, superseded, migrated, or historical PR work could matter.
+7. `.agent/tag-release-index.json` — exact tag/release archaeology, including terminal tag targets and release-asset digests. Read it when a version, release, accepted/proven baseline, handoff archive, or historical artifact may matter.
 
 These are navigation snapshots, not live authority: re-resolve current GitHub state when freshness matters.
 
